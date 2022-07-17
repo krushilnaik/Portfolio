@@ -49,7 +49,7 @@ const Home: NextPage = () => {
                   width={320}
                   height={320}
                   alt={`${blob} screenshot`}
-                  className="bg-slate-50 rounded-md"
+                  className="bg-rose-600 rounded-md"
                 />
                 <figcaption>{blob}</figcaption>
               </figure>
@@ -60,13 +60,20 @@ const Home: NextPage = () => {
       <section id="contact">
         <h2>Contact</h2>
         <form action="" className="flex flex-col gap-3">
-          <input type="email" name="email" id="email" placeholder="Email:" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Email:"
+            className="p-2"
+          />
           <textarea
             name="message"
             id="message"
             cols={30}
             rows={10}
             placeholder="Message:"
+            className="p-2"
           ></textarea>
           <button type="submit" className="bg-rose-600 w-fit m-auto p-2 rounded-md">
             Get in touch
