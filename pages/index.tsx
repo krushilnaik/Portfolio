@@ -82,7 +82,10 @@ const Home: NextPage = () => {
             placeholder="Message:"
             className="p-2"
           ></textarea>
-          <button type="submit" className="bg-rose-600 w-fit m-auto p-2 rounded-md">
+          <button
+            type="submit"
+            className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
+          >
             Get in touch
           </button>
         </form>
