@@ -46,12 +46,12 @@ const Home: NextPage = () => {
         <h2>Projects</h2>
         <ul className="flex gap-3 flex-wrap justify-center">
           {projects.map((blob) => (
-            <li className="min-w-[330px]">
+            <li className="min-w-[360px]">
               <figure className="bg-slate-700 rounded-md flex flex-col items-center p-2">
                 <img
                   src=""
-                  width={320}
-                  height={320}
+                  width={350}
+                  height={200}
                   alt={`${blob} screenshot`}
                   className="bg-rose-600 rounded-md"
                 />
