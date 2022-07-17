@@ -23,6 +23,9 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main>
         <Component {...pageProps} />
       </main>
+      <footer className="flex justify-center">
+        <span>links</span>
+      </footer>
     </div>
   );
 }
