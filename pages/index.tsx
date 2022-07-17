@@ -12,6 +12,8 @@ const Home: NextPage = () => {
     "TypeScript",
   ];
 
+  const projects = ["Quizvar", "Flashback", "Would You Redux"];
+
   return (
     <main className="text-center p-16">
       <section id="about">
@@ -38,6 +40,22 @@ const Home: NextPage = () => {
       </section>
       <section id="projects">
         <h2>Projects</h2>
+        <ul className="flex gap-3 flex-wrap justify-center">
+          {projects.map((blob) => (
+            <li className="min-w-[330px]">
+              <figure className="bg-slate-700 rounded-md flex flex-col items-center p-2">
+                <img
+                  src=""
+                  width={320}
+                  height={320}
+                  alt={`${blob} screenshot`}
+                  className="bg-slate-50 rounded-md"
+                />
+                <figcaption>{blob}</figcaption>
+              </figure>
+            </li>
+          ))}
+        </ul>
       </section>
       <section id="contact">
         <h2>Contact</h2>
