@@ -10,7 +10,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <ul className="flex gap-2">
           <li>
-            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
           </li>
           <li>
             <a href="#contact">Contact</a>
