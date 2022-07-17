@@ -2,6 +2,16 @@ import type { NextPage } from "next";
 import Image from "next/image";
 
 const Home: NextPage = () => {
+  const skills = [
+    "HTML5",
+    "CSS3",
+    "React",
+    "jQuery",
+    "PostgreSQL",
+    "TailwindCSS",
+    "TypeScript",
+  ];
+
   return (
     <main className="text-center p-16">
       <section id="about">
@@ -18,9 +28,20 @@ const Home: NextPage = () => {
           fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
         </p>
       </section>
-      <section id="skills">Skills</section>
-      <section id="projects">Projects</section>
-      <section id="contact">Contact</section>
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul className="flex gap-3 flex-wrap justify-center">
+          {skills.map((skill) => (
+            <li className="bg-slate-500 py-1 px-2 rounded-sm">{skill}</li>
+          ))}
+        </ul>
+      </section>
+      <section id="projects">
+        <h2>Projects</h2>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+      </section>
     </main>
   );
 };
