@@ -8,11 +8,6 @@
   box-sizing: border-box;
 }
 
-h2 {
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
 @layer utilities {
   .bg-theme {
     @apply bg-slate-200 dark:bg-slate-900;

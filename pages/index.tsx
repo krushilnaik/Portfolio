@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Heading from "../components/Heading";
 
 const Home: NextPage = () => {
   const skills = [
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
         </p>
       </section>
       <section id="skills">
-        <h2>Skills</h2>
+        <Heading>Skills</Heading>
         <ul className="flex gap-3 flex-wrap justify-center">
           {skills.map((skill, i) => (
             <li
@@ -49,7 +50,7 @@ const Home: NextPage = () => {
         </ul>
       </section>
       <section id="projects">
-        <h2>Projects</h2>
+        <Heading>Projects</Heading>
         <ul className="flex gap-3 flex-wrap justify-center">
           {projects.map((blob, i) => (
             <li className="min-w-[360px]" key={`project-${i}`}>
@@ -68,7 +69,7 @@ const Home: NextPage = () => {
         </ul>
       </section>
       <section id="contact">
-        <h2>Contact</h2>
+        <Heading>Contact</Heading>
         <form action="" className="flex flex-col gap-3 max-w-xl m-auto">
           <input
             type="email"
