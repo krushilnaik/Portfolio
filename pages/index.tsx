@@ -36,7 +36,9 @@ const Home: NextPage = () => {
         <h2>Skills</h2>
         <ul className="flex gap-3 flex-wrap justify-center">
           {skills.map((skill) => (
-            <li className="bg-slate-500 py-1 px-2 rounded-sm">{skill}</li>
+            <li className="bg-slate-500 py-1 px-2 rounded-sm hover:bg-slate-400 transition-colors">
+              {skill}
+            </li>
           ))}
         </ul>
       </section>
