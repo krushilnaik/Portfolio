@@ -41,7 +41,7 @@ const Home: NextPage = () => {
           {skills.map((skill, i) => (
             <li
               key={`skill-${i}`}
-              className="bg-slate-500 py-1 px-2 rounded-sm hover:bg-slate-400 transition-colors"
+              className="bg-slate-500 py-1 px-2 md:text-xl rounded-sm hover:bg-slate-400 transition-colors"
             >
               {skill}
             </li>
