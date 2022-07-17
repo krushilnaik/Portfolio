@@ -38,8 +38,11 @@ const Home: NextPage = () => {
       <section id="skills">
         <h2>Skills</h2>
         <ul className="flex gap-3 flex-wrap justify-center">
-          {skills.map((skill) => (
-            <li className="bg-slate-500 py-1 px-2 rounded-sm hover:bg-slate-400 transition-colors">
+          {skills.map((skill, i) => (
+            <li
+              key={`skill-${i}`}
+              className="bg-slate-500 py-1 px-2 rounded-sm hover:bg-slate-400 transition-colors"
+            >
               {skill}
             </li>
           ))}
@@ -48,8 +51,8 @@ const Home: NextPage = () => {
       <section id="projects">
         <h2>Projects</h2>
         <ul className="flex gap-3 flex-wrap justify-center">
-          {projects.map((blob) => (
-            <li className="min-w-[360px]">
+          {projects.map((blob, i) => (
+            <li className="min-w-[360px]" key={`project-${i}`}>
               <figure className="bg-slate-700 rounded-md flex flex-col items-center p-2">
                 <img
                   src=""
