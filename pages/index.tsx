@@ -10,6 +10,8 @@ const Home: NextPage = () => {
     "PostgreSQL",
     "TailwindCSS",
     "TypeScript",
+    "Java",
+    "Python",
   ];
 
   const projects = ["Quizvar", "Flashback", "Would You Redux"];
