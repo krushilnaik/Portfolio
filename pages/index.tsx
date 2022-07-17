@@ -41,6 +41,19 @@ const Home: NextPage = () => {
       </section>
       <section id="contact">
         <h2>Contact</h2>
+        <form action="" className="flex flex-col gap-3">
+          <input type="email" name="email" id="email" placeholder="Email:" />
+          <textarea
+            name="message"
+            id="message"
+            cols={30}
+            rows={10}
+            placeholder="Message:"
+          ></textarea>
+          <button type="submit" className="bg-rose-600 w-fit m-auto p-2 rounded-md">
+            Get in touch
+          </button>
+        </form>
       </section>
     </main>
   );
