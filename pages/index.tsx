@@ -21,8 +21,8 @@ const Home: NextPage = () => {
       <section id="about">
         <Image
           src="/images/me.jpg"
-          width={200}
-          height={200}
+          width={220}
+          height={220}
           objectFit="cover"
           objectPosition="50% 0%"
           className="rounded-md"
