@@ -18,7 +18,10 @@ const Home: NextPage = () => {
 
   return (
     <main className="text-center p-16">
-      <section id="about">
+      <section
+        id="about"
+        className="max-w-7xl m-auto flex flex-col lg:flex-row-reverse items-center gap-7"
+      >
         <Image
           src="/images/me.jpg"
           width={220}
@@ -63,7 +66,7 @@ const Home: NextPage = () => {
       </section>
       <section id="contact">
         <h2>Contact</h2>
-        <form action="" className="flex flex-col gap-3">
+        <form action="" className="flex flex-col gap-3 max-w-xl m-auto">
           <input
             type="email"
             name="email"
