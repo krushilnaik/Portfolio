@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import Heading from "../components/Heading";
+import ProjectCard from "../components/ProjectCard";
 
 const Home: NextPage = () => {
   const skills = [
@@ -14,8 +16,6 @@ const Home: NextPage = () => {
     "Java",
     "Python",
   ];
-
-  const projects = ["Quizvar", "Flashback", "Would You Redux"];
 
   return (
     <main className="text-center p-16">
@@ -53,32 +53,14 @@ const Home: NextPage = () => {
           {skills.map((skill, i) => (
             <li
               key={`skill-${i}`}
-              className="bg-slate-500 py-1 px-2 md:text-xl rounded-sm hover:bg-slate-400 transition-colors"
+              className="bg-slate-500/75 py-1 px-2 md:text-xl rounded-sm hover:bg-slate-500/95 transition-colors"
             >
               {skill}
             </li>
           ))}
         </ul>
       </section>
-      <section id="projects">
-        <Heading>Projects</Heading>
-        <ul className="flex gap-3 flex-wrap justify-center">
-          {projects.map((blob, i) => (
-            <li className="min-w-[360px]" key={`project-${i}`}>
-              <figure className="bg-slate-700 rounded-md flex flex-col items-center p-2">
-                <img
-                  src=""
-                  width={350}
-                  height={200}
-                  alt={`${blob} screenshot`}
-                  className="bg-rose-600 rounded-md"
-                />
-                <figcaption>{blob}</figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
-      </section>
+
       <section id="contact">
         <Heading>Contact</Heading>
         <form action="" className="flex flex-col gap-4 max-w-xl m-auto">
