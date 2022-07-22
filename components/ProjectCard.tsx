@@ -10,7 +10,7 @@ function ProjectCard(props: Props) {
 
   return (
     <Link href={`/projects/${projectName}`}>
-      <figure className="relative bg-slate-700 rounded-md z-20 flex flex-col items-center p-2">
+      <figure className="relative rounded-md z-20 flex flex-col items-center p-2">
         <img
           src=""
           width={350}
