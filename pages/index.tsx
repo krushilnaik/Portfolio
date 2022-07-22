@@ -35,6 +35,17 @@ const Home: NextPage = () => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
           fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
         </p>
+
+        <div className="flex gap-4 items-center">
+          <Link href="#contact">
+            <a className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md text-lg">
+              Get in touch
+            </a>
+          </Link>
+          <Link href="/projects" passHref>
+            <a className="text-lg">See my projects</a>
+          </Link>
+        </div>
       </section>
       <section id="skills">
         <Heading>Skills</Heading>
