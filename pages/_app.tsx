@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Logo from "../components/Logo";
+import Link from "next/link";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -10,13 +11,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <Logo />
           <ul className="flex gap-2">
             <li>
-              <a href="/">Home</a>
+              <Link href="/">Home</Link>
             </li>
             <li>
-              <a href="/projects">Projects</a>
+              <Link href="/projects">Projects</Link>
             </li>
             <li>
-              <a href="#contact">Contact</a>
+              <Link href="#contact">Contact</Link>
             </li>
           </ul>
         </nav>
