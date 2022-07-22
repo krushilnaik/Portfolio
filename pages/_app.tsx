@@ -4,8 +4,8 @@ import Logo from "../components/Logo";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
-    <div className="w-screen min-h-screen max-w-full bg-slate-900 text-slate-200 p-3">
-      <header>
+    <div className="w-screen min-h-screen max-w-full bg-slate-900 text-slate-200">
+      <header className="p-3">
         <nav className="flex justify-between items-center">
           <Logo />
           <ul className="flex gap-2">
@@ -21,10 +21,10 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </ul>
         </nav>
       </header>
-      <main>
+      <main className="p-3">
         <Component {...pageProps} key={router.asPath} />
       </main>
-      <footer className="flex justify-center gap-3">
+      <footer className="flex justify-center gap-3 h-64 bg-slate-800/40">
         <span className="bg-slate-50/5 rounded-full w-9 h-9 grid place-content-center select-none hover:bg-slate-50/10 transition-colors cursor-pointer">
           L
         </span>

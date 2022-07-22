@@ -31,20 +31,23 @@ const Home: NextPage = () => {
           objectPosition="50% 0%"
           className="rounded-md"
         />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
-          fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
-        </p>
-
-        <div className="flex gap-4 items-center">
-          <Link href="#contact">
-            <a className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md text-lg">
-              Get in touch
-            </a>
-          </Link>
-          <Link href="/projects" passHref>
-            <a className="text-lg">See my projects</a>
-          </Link>
+        <div className="flex flex-col gap-2">
+          <p className="max-w-lg">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
+            fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
+          </p>
+          <div className="flex gap-4 items-center w-fit m-auto">
+            <Link href="#contact">
+              <a className="bg-rose-600 hover:bg-rose-500 m-auto p-2 rounded-md text-lg">
+                Get in touch
+              </a>
+            </Link>
+            <Link href="/projects" passHref>
+              <a className="text-lg hover:text-rose-400 transition-colors">
+                See my projects
+              </a>
+            </Link>
+          </div>
         </div>
       </section>
       <section id="skills">
