@@ -70,13 +70,13 @@ const Home: NextPage = () => {
       </section>
       <section id="contact">
         <Heading>Contact</Heading>
-        <form action="" className="flex flex-col gap-3 max-w-xl m-auto">
+        <form action="" className="flex flex-col gap-4 max-w-xl m-auto">
           <input
             type="email"
             name="email"
             id="email"
             placeholder="Email:"
-            className="p-2"
+            className="p-2 bg-transparent border-[1px] rounded-md"
           />
           <textarea
             name="message"
@@ -84,7 +84,7 @@ const Home: NextPage = () => {
             cols={30}
             rows={10}
             placeholder="Message:"
-            className="p-2"
+            className="p-2 bg-transparent resize-none border-[1px] rounded-md"
           ></textarea>
           <button
             type="submit"

@@ -1,30 +1,36 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
+import Logo from "../components/Logo";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div className="w-screen min-h-screen max-w-full bg-slate-900 text-slate-200 p-3">
-      <nav className="flex justify-between items-center">
-        <div className="bg-rose-600 w-12 h-12 rounded-full grid place-content-center text-2xl font-sans font-semibold">
-          K
-        </div>
-        <ul className="flex gap-2">
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <nav className="flex justify-between items-center">
+          <Logo />
+          <ul className="flex gap-2">
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
       <main>
         <Component {...pageProps} />
       </main>
-      <footer className="flex justify-center">
-        <span>links</span>
+      <footer className="flex justify-center gap-3">
+        <span className="bg-slate-50/5 rounded-full w-9 h-9 grid place-content-center select-none hover:bg-slate-50/10 transition-colors cursor-pointer">
+          L
+        </span>
+        <span className="bg-slate-50/5 rounded-full w-9 h-9 grid place-content-center select-none hover:bg-slate-50/10 transition-colors cursor-pointer">
+          G
+        </span>
       </footer>
     </div>
   );
