@@ -1,7 +1,6 @@
 import React from "react";
-
 interface Props {
-  projectName: String;
+  projectName: string;
 }
 
 function ProjectCard(props: Props) {

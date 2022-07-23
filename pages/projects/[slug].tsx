@@ -1,19 +1,18 @@
 import { GetServerSideProps } from "next";
 import { motion, Variants } from "framer-motion";
-import ProjectCard from "../../components/ProjectCard";
 import Link from "next/link";
 
 interface Props {
-  projectName: String;
+  projectName: string;
 }
 
 const ProjectPage = (props: Props) => {
   const { projectName } = props;
 
-  const variants: Variants = {
+  const mobileVariants: Variants = {
     open: {
-      width: "125vw",
-      height: "125vw",
+      width: "100vw",
+      height: "100vw",
       transition: {
         duration: 0.6,
       },
@@ -27,21 +26,56 @@ const ProjectPage = (props: Props) => {
     },
   };
 
+  const desktopVariants: Variants = {
+    open: {
+      width: "70vw",
+      transition: {
+        duration: 0.6,
+      },
+    },
+    close: {
+      width: 0,
+      transition: {
+        duration: 0.5,
+      },
+    },
+  };
+
+  const DesktopBackground = () => (
+    <div className="hidden md:block absolute top-0 left-0 max-w-[100%] overflow-hidden">
+      <motion.div
+        variants={desktopVariants}
+        style={{ clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)" }}
+        initial="close"
+        animate="open"
+        exit="close"
+        key="project_desktop_background"
+        className="bg-red-900 h-screen"
+      ></motion.div>
+    </div>
+  );
+
+  const MobileBackground = () => (
+    <div className="absolute md:hidden top-0 left-0 w-screen h-screen max-w-[100%] overflow-hidden z-10">
+      <motion.div
+        variants={mobileVariants}
+        initial="close"
+        animate="open"
+        exit="close"
+        key="project_mobile_background"
+        className="absolute -top-[40vw] left-1/2 -translate-x-1/2 z-10 rounded-full bg-red-900"
+      ></motion.div>
+    </div>
+  );
+
   return (
     <>
-      <div className="absolute top-0 left-0 w-screen h-screen max-w-[100vw] overflow-hidden z-10">
-        <motion.div
-          variants={variants}
-          initial="close"
-          animate="open"
-          exit="close"
-          key="project-background"
-          className="absolute -top-[40vw] left-1/2 -translate-x-1/2 origin-center z-10 rounded-full bg-red-900"
-        ></motion.div>
-      </div>
+      {/* Render the background based on screen size */}
+      <DesktopBackground />
+      <MobileBackground />
 
       <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
-        <figure className="flex flex-col gap-6">
+        <figure className="flex flex-col items-center gap-6">
           <img
             src=""
             alt={`${projectName} screenshot`}

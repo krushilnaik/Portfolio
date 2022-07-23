@@ -21,7 +21,7 @@ const Home: NextPage = () => {
     <main className="text-center p-16">
       <section
         id="about"
-        className="max-w-7xl m-auto flex flex-col lg:flex-row-reverse items-center gap-7"
+        className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center items-center gap-7"
       >
         <Image
           src="/images/me.jpg"
