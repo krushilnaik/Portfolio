@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Logo from "../components/Logo";
 import Link from "next/link";
+import { AnimatePresence } from "framer-motion";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -22,7 +23,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </ul>
         </nav>
       </header>
-      <Component {...pageProps} key={router.asPath} />
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps} key={router.asPath} />
+      </AnimatePresence>
       <footer className="flex flex-col p-4 items-center gap-3 h-64 bg-slate-800/40">
         <h2 className="text-2xl">Social Links</h2>
         <div className="flex gap-3">

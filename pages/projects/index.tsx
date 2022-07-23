@@ -6,7 +6,10 @@ function Projects() {
   return (
     <ul className="flex gap-3 flex-wrap justify-center">
       {projects.map((blob, i) => (
-        <li className="min-w-[360px] bg-slate-700" key={`project-${i}`}>
+        <li
+          className="min-w-[360px] bg-slate-700 hover:bg-slate-600 transition-colors cursor-pointer"
+          key={`project-${i}`}
+        >
           <ProjectCard projectName={blob} />
         </li>
       ))}
