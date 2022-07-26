@@ -28,6 +28,7 @@ const Home: NextPage = () => {
           width={220}
           height={220}
           objectFit="cover"
+          alt="selfie"
           objectPosition="50% 0%"
           className="rounded-md"
         />
