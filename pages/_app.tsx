@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <AnimatePresence exitBeforeEnter>
           <Component {...pageProps} key={router.asPath} />
         </AnimatePresence>
-        <footer className="flex flex-col p-4 z-40 items-center gap-3 h-64 bg-white/5 mt-6">
+        <footer className="flex flex-col p-4 z-40 items-center gap-3 h-64 bg-black/5 dark:bg-white/5 mt-6">
           <h2 className="text-2xl">Social Links</h2>
           <div className="flex gap-3">
             <span className="bg-slate-50/5 rounded-full w-9 h-9 grid place-content-center select-none hover:bg-slate-50/10 transition-colors cursor-pointer">
