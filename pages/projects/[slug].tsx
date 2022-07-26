@@ -20,7 +20,7 @@ interface Props {
 const ProjectPage = ({ project }: Props) => {
   const router = useRouter();
 
-  const { title, accentColor, description } = project;
+  // const { title, accentColor, description } = project;
   // const title = "test";
   // const accentColor = "#333";
 
@@ -62,7 +62,7 @@ const ProjectPage = ({ project }: Props) => {
         variants={desktopVariants}
         style={{
           clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
-          backgroundColor: accentColor,
+          backgroundColor: project.accentColor,
         }}
         initial="close"
         animate="open"
@@ -82,7 +82,7 @@ const ProjectPage = ({ project }: Props) => {
         exit="close"
         key="project_mobile_background"
         className="absolute -top-[40vw] left-1/2 -translate-x-1/2 z-10 rounded-full bg-red-900"
-        style={{ backgroundColor: accentColor }}
+        style={{ backgroundColor: project.accentColor }}
       ></motion.div>
     </div>
   );
@@ -99,10 +99,12 @@ const ProjectPage = ({ project }: Props) => {
         <figure className="flex flex-col items-center gap-6">
           <img
             src=""
-            alt={`${title} screenshot`}
+            alt={`${project.title} screenshot`}
             className="bg-rose-600 rounded-md w-44 h-80 lg:w-[550px] lg:h-[300px]"
           />
-          <figcaption className="text-center text-3xl md:text-4xl">{title}</figcaption>
+          <figcaption className="text-center text-3xl md:text-4xl">
+            {project.title}
+          </figcaption>
         </figure>
 
         <div className="grid gap-9">
@@ -116,7 +118,7 @@ const ProjectPage = ({ project }: Props) => {
               </li>
             ))}
           </ul>
-          <article>{documentToReactComponents(description.json)}</article>
+          <article>{documentToReactComponents(project.description.json)}</article>
         </div>
       </div>
 
