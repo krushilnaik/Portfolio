@@ -162,11 +162,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     }
   `);
 
-  console.log(data.projectCollection.items[0]);
-
   return {
     props: {
-      project: data.projectCollection.items[0],
+      project: data?.projectCollection?.items?.[0],
     },
   };
 };
@@ -184,7 +182,7 @@ export async function getStaticPaths() {
   `);
 
   return {
-    paths: data.projectCollection.items.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: data?.projectCollection?.items.map(({ slug }) => `/posts/${slug}`) ?? [],
     fallback: true,
   };
 }
