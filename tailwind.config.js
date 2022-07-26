@@ -3,7 +3,8 @@ module.exports = {
   darkMode: "class",
   content: ["./pages/**/*.tsx", "./components/**/*.tsx", "./styles/**/*.css"],
   theme: {
+    typography: (theme) => ({}),
     extend: {},
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

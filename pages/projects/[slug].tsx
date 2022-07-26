@@ -20,10 +20,6 @@ interface Props {
 const ProjectPage = ({ project }: Props) => {
   const router = useRouter();
 
-  // const { title, accentColor, description } = project;
-  // const title = "test";
-  // const accentColor = "#333";
-
   const mobileVariants: Variants = {
     open: {
       width: "100vw",
