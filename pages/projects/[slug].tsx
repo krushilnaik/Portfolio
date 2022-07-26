@@ -182,7 +182,7 @@ export async function getStaticPaths() {
   `);
 
   return {
-    paths: data?.projectCollection?.items.map(({ slug }) => `/posts/${slug}`) ?? [],
+    paths: data?.projectCollection?.items.map(({ slug }) => `/projects/${slug}`) ?? [],
     fallback: true,
   };
 }
