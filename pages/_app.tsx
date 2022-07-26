@@ -1,10 +1,10 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Logo from "../components/Logo";
-import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import ThemeToggle from "../components/ThemeToggle";
+import NavLink from "../components/NavLink";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -13,20 +13,20 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <header className="p-3">
           <nav className="flex justify-between items-center">
             <Logo />
-            <ul className="flex gap-2">
-              <li>
-                <Link href="/">Home</Link>
-              </li>
-              <li>
-                <Link href="/projects">Projects</Link>
-              </li>
-              <li>
-                <Link href="#contact">Contact</Link>
-              </li>
-              <li>
-                <ThemeToggle />
-              </li>
-            </ul>
+            <div className="flex gap-2">
+              <ul className="flex gap-2 items-center">
+                <li>
+                  <NavLink href="/">Home</NavLink>
+                </li>
+                <li>
+                  <NavLink href="/projects">Projects</NavLink>
+                </li>
+                <li>
+                  <NavLink href="#contact">Contact</NavLink>
+                </li>
+              </ul>
+              <ThemeToggle />
+            </div>
           </nav>
         </header>
         <AnimatePresence exitBeforeEnter>

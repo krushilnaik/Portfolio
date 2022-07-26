@@ -10,7 +10,7 @@ function NavLink(props: PropsWithChildren<Props>) {
 
   return (
     <Link href={href} passHref>
-      <a className="hover:text-rose-400 transition-colors">{children}</a>
+      <a className="hover:text-rose-400 text-lg transition-colors">{children}</a>
     </Link>
   );
 }
