@@ -1,13 +1,28 @@
-import { GetServerSideProps } from "next";
+import { GetServerSideProps, GetStaticProps } from "next";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
+import { fetchGraphQL } from "../../lib/api";
+import { useRouter } from "next/router";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
+interface Project {
+  title: string;
+  accentColor: string;
+  techStackCollection: object;
+  description: {
+    json: any;
+  };
+}
 interface Props {
-  projectName: string;
+  project: Project;
 }
 
-const ProjectPage = (props: Props) => {
-  const { projectName } = props;
+const ProjectPage = ({ project }: Props) => {
+  const router = useRouter();
+
+  const { title, accentColor, description } = project;
+  // const title = "test";
+  // const accentColor = "#333";
 
   const mobileVariants: Variants = {
     open: {
@@ -45,7 +60,10 @@ const ProjectPage = (props: Props) => {
     <div className="hidden md:block absolute top-0 left-0 max-w-[100%] overflow-hidden">
       <motion.div
         variants={desktopVariants}
-        style={{ clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)" }}
+        style={{
+          clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
+          backgroundColor: accentColor,
+        }}
         initial="close"
         animate="open"
         exit="close"
@@ -64,11 +82,14 @@ const ProjectPage = (props: Props) => {
         exit="close"
         key="project_mobile_background"
         className="absolute -top-[40vw] left-1/2 -translate-x-1/2 z-10 rounded-full bg-red-900"
+        style={{ backgroundColor: accentColor }}
       ></motion.div>
     </div>
   );
 
-  return (
+  return router.isFallback ? (
+    <h1>loading...</h1>
+  ) : (
     <>
       {/* Render the background based on screen size */}
       <DesktopBackground />
@@ -78,12 +99,10 @@ const ProjectPage = (props: Props) => {
         <figure className="flex flex-col items-center gap-6">
           <img
             src=""
-            alt={`${projectName} screenshot`}
+            alt={`${title} screenshot`}
             className="bg-rose-600 rounded-md w-44 h-80 lg:w-[550px] lg:h-[300px]"
           />
-          <figcaption className="text-center text-3xl md:text-4xl">
-            {projectName}
-          </figcaption>
+          <figcaption className="text-center text-3xl md:text-4xl">{title}</figcaption>
         </figure>
 
         <div className="grid gap-9">
@@ -97,11 +116,7 @@ const ProjectPage = (props: Props) => {
               </li>
             ))}
           </ul>
-          <p className="max-w-md lg:max-w-2xl m-auto text-center md:text-left indent-8 text-lg md:text-2xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam amet
-            quidem enim obcaecati, sit asperiores eos nulla similique minus. Quisquam,
-            nam? Nesciunt a voluptas, sequi est modi non aspernatur quod?
-          </p>
+          <article>{documentToReactComponents(description.json)}</article>
         </div>
       </div>
 
@@ -124,14 +139,54 @@ const ProjectPage = (props: Props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { params } = ctx;
+export const getStaticProps: GetStaticProps = async (ctx) => {
+  const { slug } = ctx.params!;
+
+  const { data } = await fetchGraphQL(`
+    query {
+      projectCollection(where: {slug: "${slug}"}, limit: 1) {
+        items {
+          title
+          accentColor
+          techStackCollection {
+            items {
+              label
+              accentColor
+            }
+          }
+          description {
+            json
+          }
+        }
+      }
+    }
+  `);
+
+  console.log(data.projectCollection.items[0]);
 
   return {
     props: {
-      projectName: params?.slug ?? "random",
+      project: data.projectCollection.items[0],
     },
   };
 };
+
+export async function getStaticPaths() {
+  const { data } = await fetchGraphQL(`
+    query {
+      projectCollection() {
+        items {
+          title
+          slug
+        }
+      }
+    }
+  `);
+
+  return {
+    paths: data?.map(({ items }) => `/posts/${items.slug}`) ?? [],
+    fallback: true,
+  };
+}
 
 export default ProjectPage;

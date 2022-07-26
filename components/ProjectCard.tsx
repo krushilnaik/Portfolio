@@ -1,10 +1,10 @@
 import React from "react";
 interface Props {
-  projectName: string;
+  title: string;
 }
 
 function ProjectCard(props: Props) {
-  const { projectName } = props;
+  const { title } = props;
 
   return (
     <figure className="relative rounded-md z-20 flex flex-col items-center p-2">
@@ -12,10 +12,10 @@ function ProjectCard(props: Props) {
         src=""
         width={350}
         height={200}
-        alt={`${projectName} screenshot`}
+        alt={`${title} screenshot`}
         className="bg-rose-600 rounded-md"
       />
-      <figcaption>{projectName}</figcaption>
+      <figcaption>{title}</figcaption>
     </figure>
   );
 }
