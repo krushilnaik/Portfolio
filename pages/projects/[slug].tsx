@@ -5,14 +5,16 @@ import { fetchGraphQL } from "../../lib/api";
 import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
+interface Tech {
+  label: string;
+  accentColor: string;
+}
+
 interface Project {
   title: string;
   accentColor: string;
   techStackCollection: {
-    items: {
-      label: string;
-      accentColor: string;
-    }[];
+    items: Tech[];
   };
   description: {
     json: any;
@@ -52,8 +54,8 @@ const ProjectPage = ({ project }: Props) => {
       },
     },
     hidden: {
-      width: "10vw",
-      height: "10vw",
+      width: 0,
+      height: 0,
       transition: {
         delay: 0.3,
         duration: 0.5,
@@ -192,6 +194,9 @@ const ProjectPage = ({ project }: Props) => {
   );
 };
 
+/**
+ * Run on the server. Gets all the data for the requested project
+ */
 export const getStaticProps: GetStaticProps = async (ctx) => {
   const { slug } = ctx.params!;
 
