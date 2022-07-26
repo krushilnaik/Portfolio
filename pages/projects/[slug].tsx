@@ -172,9 +172,9 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 };
 
 export async function getStaticPaths() {
-  const { data } = await fetchGraphQL(`
+  const data = await fetchGraphQL(`
     query {
-      projectCollection() {
+      projectCollection(preview: false) {
         items {
           title
           slug
@@ -184,7 +184,7 @@ export async function getStaticPaths() {
   `);
 
   return {
-    paths: data?.map(({ items }) => `/posts/${items.slug}`) ?? [],
+    paths: data.projectCollection.map(({ items }) => `/posts/${items.slug}`) ?? [],
     fallback: true,
   };
 }

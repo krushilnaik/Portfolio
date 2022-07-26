@@ -34,7 +34,7 @@ function Projects({ projects }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await fetchGraphQL(`
     query {
-      projectCollection(limit: 5) {
+      projectCollection(preview: false) {
         items {
           title
           slug
