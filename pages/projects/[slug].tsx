@@ -155,7 +155,7 @@ const ProjectPage = ({ project }: Props) => {
           </figcaption>
         </figure>
 
-        <div className="grid gap-9">
+        <div className="grid gap-9 md:gap-0 md:w-1/3">
           <motion.ul
             variants={containerVariants}
             className="flex flex-wrap gap-2 my-2 mx-auto justify-center md:justify-start h-fit w-80"
@@ -171,7 +171,9 @@ const ProjectPage = ({ project }: Props) => {
               </motion.li>
             ))}
           </motion.ul>
-          <article>{documentToReactComponents(project.description.json)}</article>
+          <article className="w-96 md:w-full">
+            {documentToReactComponents(project.description.json)}
+          </article>
         </div>
       </div>
 
