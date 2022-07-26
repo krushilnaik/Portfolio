@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import Logo from "../components/Logo";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
+import NavLink from "../components/NavLink";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -12,13 +13,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <Logo />
           <ul className="flex gap-2">
             <li>
-              <Link href="/">Home</Link>
+              <NavLink href="/">Home</NavLink>
             </li>
             <li>
-              <Link href="/projects">Projects</Link>
+              <NavLink href="/projects">Projects</NavLink>
             </li>
             <li>
-              <Link href="#contact">Contact</Link>
+              <NavLink href="#contact">Contact</NavLink>
             </li>
           </ul>
         </nav>
