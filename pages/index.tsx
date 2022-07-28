@@ -1,7 +1,6 @@
 import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Heading from "../components/Heading";
 import { fetchGraphQL } from "../lib/api";
 
