@@ -1,20 +1,14 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import Logo from "../components/Logo";
-import { AnimatePresence, motion, Variants } from "framer-motion";
-import { ThemeProvider } from "next-themes";
-import ThemeToggle from "../components/ThemeToggle";
-import NavLink from "../components/NavLink";
+import { motion, Variants } from "framer-motion";
 import { useRouter } from "next/router";
 import { BackgroundContext } from "../contexts/BackgroundContext";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MainLayout from "../layouts/MainLayout";
-import { useBackground } from "../hooks/useBackground";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
-  const { backgroundColor } = useBackground();
   const [isProject, setIsProject] = useState(false);
   const { asPath } = useRouter();
 

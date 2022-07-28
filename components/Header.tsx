@@ -21,7 +21,7 @@ function Header(props: Props) {
               <NavLink href="/projects">Projects</NavLink>
             </li>
             <li>
-              <NavLink href="#contact">Contact</NavLink>
+              <NavLink href="/#contact">Contact</NavLink>
             </li>
           </ul>
           <ThemeToggle />
