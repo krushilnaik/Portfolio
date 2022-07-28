@@ -1,12 +1,33 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Logo from "../components/Logo";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import ThemeToggle from "../components/ThemeToggle";
 import NavLink from "../components/NavLink";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const variants: Variants = {
+    initial: {
+      y: 500,
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+      },
+    },
+    exit: {
+      opacity: 0,
+      x: 500,
+      transition: {
+        duration: 0.6,
+      },
+    },
+  };
+
   return (
     <ThemeProvider attribute="class">
       <div className="w-screen min-h-screen flex flex-col justify-between max-w-full bg-theme text-theme transition-colors">
@@ -30,7 +51,15 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           </nav>
         </header>
         <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.asPath} />
+          <motion.div
+            variants={variants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            key={router.asPath}
+          >
+            <Component {...pageProps} />
+          </motion.div>
         </AnimatePresence>
         <footer className="flex flex-col p-4 z-40 items-center gap-3 h-64 bg-black/5 dark:bg-white/5 mt-6">
           <h2 className="text-2xl">Social Links</h2>
