@@ -93,7 +93,7 @@ const ProjectPage = ({ project }: Props) => {
             variants={previewVariants}
             alt={`${project.title} screenshot`}
             key="project_demo"
-            className="bg-rose-600 rounded-lg w-44 h-80 lg:w-[550px] lg:h-[300px] drop-shadow-2xl"
+            className="bg-rose-600 rounded-lg w-48 h-96 lg:w-[550px] lg:h-[300px] drop-shadow-2xl"
           />
           <figcaption className="text-center text-3xl md:text-4xl">
             {project.title}
@@ -116,7 +116,7 @@ const ProjectPage = ({ project }: Props) => {
               </motion.li>
             ))}
           </motion.ul>
-          <article className="w-96 md:w-full">
+          <article className="w-96 md:w-full prose dark:prose-invert">
             {documentToReactComponents(project.description.json)}
           </article>
         </div>
