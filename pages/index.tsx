@@ -25,7 +25,7 @@ const Home: NextPage<Props> = ({ skills }) => {
           objectPosition="50% 0%"
           className="rounded-md"
         />
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-9">
           <p className="max-w-lg">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
             fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
@@ -56,7 +56,7 @@ const Home: NextPage<Props> = ({ skills }) => {
             </li>
           ))}
           <li>
-            <span className="text-xl">...and more!</span>
+            <span>...and more!</span>
           </li>
         </ul>
       </section>
