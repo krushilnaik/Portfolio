@@ -1,21 +1,15 @@
-import type { NextPage } from "next";
+import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Heading from "../components/Heading";
+import { fetchGraphQL } from "../lib/api";
 
-const Home: NextPage = () => {
-  const skills = [
-    "HTML5",
-    "CSS3",
-    "React",
-    "jQuery",
-    "PostgreSQL",
-    "TailwindCSS",
-    "TypeScript",
-    "Java",
-    "Python",
-  ];
+interface Props {
+  skills: string[];
+}
 
+const Home: NextPage<Props> = ({ skills }) => {
   return (
     <main className="text-center p-16">
       <section
@@ -61,6 +55,9 @@ const Home: NextPage = () => {
               {skill}
             </li>
           ))}
+          <li>
+            <span className="text-xl">...and more!</span>
+          </li>
         </ul>
       </section>
 
@@ -92,6 +89,24 @@ const Home: NextPage = () => {
       </section>
     </main>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const { data } = await fetchGraphQL(`
+    query {
+      techCollection(limit: 8) {
+        items {
+          label
+        }
+      }
+    }
+  `);
+
+  return {
+    props: {
+      skills: data?.techCollection?.items?.map((item) => item.label) || [],
+    },
+  };
 };
 
 export default Home;
