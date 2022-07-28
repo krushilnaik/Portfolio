@@ -56,7 +56,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             initial="initial"
             animate="animate"
             exit="exit"
-            key={router.asPath}
+            key={router.asPath.split("#")[0]}
           >
             <Component {...pageProps} />
           </motion.div>
