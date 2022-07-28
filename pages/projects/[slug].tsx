@@ -4,6 +4,8 @@ import Link from "next/link";
 import { fetchGraphQL } from "../../lib/api";
 import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import { useBackground } from "../../hooks/useBackground";
+import { useEffect } from "react";
 
 interface Tech {
   label: string;
@@ -20,12 +22,24 @@ interface Project {
     json: any;
   };
 }
+
 interface Props {
   project: Project;
 }
 
 const ProjectPage = ({ project }: Props) => {
   const router = useRouter();
+  const { setBackgroundColor } = useBackground();
+
+  useEffect(() => {
+    console.log(`Setting background color to ${project.accentColor}`);
+
+    setBackgroundColor(project.accentColor);
+
+    return () => {
+      setBackgroundColor("darkslategray");
+    };
+  });
 
   const previewVariants: Variants = {
     visible: {
@@ -108,10 +122,7 @@ const ProjectPage = ({ project }: Props) => {
         </div>
       </div>
 
-      <div
-        className="font-mono flex gap-2 absolute bottom-4 left-3 z-50"
-        key="bottom-nav"
-      >
+      <div className="font-mono flex gap-2 fixed bottom-4 left-3 z-50" key="bottom-nav">
         <Link href="/projects" passHref>
           <a className="text-4xl bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14">
             &larr;
