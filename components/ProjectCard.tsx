@@ -7,7 +7,7 @@ function ProjectCard(props: Props) {
   const { title } = props;
 
   return (
-    <figure className="relative rounded-md z-20 flex flex-col items-center p-2">
+    <figure className="relative rounded-md z-20 flex flex-col items-center p-2 gap-2">
       <img
         src=""
         width={350}
@@ -15,7 +15,7 @@ function ProjectCard(props: Props) {
         alt={`${title} screenshot`}
         className="bg-rose-600 rounded-md"
       />
-      <figcaption>{title}</figcaption>
+      <figcaption className="text-xl">{title}</figcaption>
     </figure>
   );
 }
