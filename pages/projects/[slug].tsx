@@ -87,7 +87,7 @@ const ProjectPage = ({ project }: Props) => {
   ) : (
     <motion.div initial="hidden" animate="visible" exit="hidden">
       <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
-        <figure className="flex flex-col items-center gap-6">
+        <figure className="flex flex-col mt-10 items-center gap-6">
           <motion.img
             src=""
             variants={previewVariants}
