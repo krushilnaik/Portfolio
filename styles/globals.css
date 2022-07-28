@@ -8,6 +8,12 @@ html {
 
 body {
   overflow: overlay;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+b {
+  @apply text-rose-900 dark:text-rose-300;
 }
 
 * {
