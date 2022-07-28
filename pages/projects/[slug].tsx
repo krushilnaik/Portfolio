@@ -171,7 +171,7 @@ const ProjectPage = ({ project }: Props) => {
               </motion.li>
             ))}
           </motion.ul>
-          <article className="w-96 md:w-full">
+          <article className="w-96 md:w-full prose dark:prose-invert md:prose-xl">
             {documentToReactComponents(project.description.json)}
           </article>
         </div>

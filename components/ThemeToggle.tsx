@@ -20,7 +20,7 @@ function ThemeToggle() {
 
         setTheme(theme === "dark" ? "light" : "dark");
       }}
-      className="bg-sky-900 dark:bg-amber-500 w-12 h-12 rounded-full"
+      className="bg-sky-900 dark:bg-amber-500 w-12 h-12 rounded-full relative z-50"
     ></button>
   );
 }
