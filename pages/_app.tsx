@@ -5,8 +5,11 @@ import { AnimatePresence, motion, Variants } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import ThemeToggle from "../components/ThemeToggle";
 import NavLink from "../components/NavLink";
+import { useRouter } from "next/router";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
+  const { asPath } = useRouter();
+
   const variants: Variants = {
     initial: {
       y: 500,
@@ -50,6 +53,26 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             </div>
           </nav>
         </header>
+
+        {/* Desktop Background */}
+        <div
+          className="absolute transition-all duration-300 top-0 left-0 h-screen bg-red-400"
+          style={{
+            clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
+            width: asPath.startsWith("/projects/") ? "60vw" : "0vw",
+          }}
+        ></div>
+
+        {/* Mobile background */}
+        <div
+          className="transition-all md:hidden duration-300 w-28 h-28 bg-red-400 rounded-full absolute top-0 -translate-x-1/2 -translate-y-1/2 left-1/2"
+          style={
+            asPath.startsWith("/projects/")
+              ? { width: "130vw", height: "130vw" }
+              : { width: "0vw", height: "0vw" }
+          }
+        ></div>
+
         <AnimatePresence exitBeforeEnter>
           <motion.div
             variants={variants}

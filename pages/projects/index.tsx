@@ -14,7 +14,7 @@ interface Props {
 
 function Projects({ projects }: Props) {
   return (
-    <ul className="flex gap-3 flex-wrap justify-center">
+    <ul className="flex gap-3 flex-wrap max-w-[1550px] m-auto justify-center">
       {projects.map((project, i) => (
         <li
           className="min-w-[360px] bg-slate-700 hover:bg-slate-600 rounded-md transition-colors cursor-pointer"

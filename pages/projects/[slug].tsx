@@ -1,4 +1,4 @@
-import { GetServerSideProps, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { fetchGraphQL } from "../../lib/api";
@@ -45,40 +45,6 @@ const ProjectPage = ({ project }: Props) => {
     },
   };
 
-  const mobileVariants: Variants = {
-    visible: {
-      width: "110vw",
-      height: "110vw",
-      transition: {
-        duration: 0.6,
-      },
-    },
-    hidden: {
-      width: 0,
-      height: 0,
-      transition: {
-        delay: 0.3,
-        duration: 0.5,
-      },
-    },
-  };
-
-  const desktopVariants: Variants = {
-    visible: {
-      width: "65vw",
-      transition: {
-        duration: 0.6,
-      },
-    },
-    hidden: {
-      width: 0,
-      transition: {
-        delay: 0.3,
-        duration: 0.5,
-      },
-    },
-  };
-
   const containerVariants: Variants = {
     visible: {
       transition: {
@@ -102,45 +68,10 @@ const ProjectPage = ({ project }: Props) => {
     },
   };
 
-  const DesktopBackground = () => (
-    <div
-      className="hidden md:block absolute top-0 left-0 max-w-[100%] overflow-hidden"
-      key="project_desktop_wrapper"
-    >
-      <motion.div
-        variants={desktopVariants}
-        style={{
-          clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
-          backgroundColor: project.accentColor,
-        }}
-        key="project_desktop_background"
-        className="bg-red-900 h-screen"
-      ></motion.div>
-    </div>
-  );
-
-  const MobileBackground = () => (
-    <div
-      className="absolute md:hidden top-0 left-0 w-screen h-screen max-w-[100%] overflow-hidden z-10"
-      key="project_mobile_wrapper"
-    >
-      <motion.div
-        variants={mobileVariants}
-        key="project_mobile_background"
-        className="absolute -top-[40vw] left-1/2 -translate-x-1/2 z-10 rounded-full bg-red-900"
-        style={{ backgroundColor: project.accentColor }}
-      ></motion.div>
-    </div>
-  );
-
   return router.isFallback ? (
     <h1>loading...</h1>
   ) : (
     <motion.div initial="hidden" animate="visible" exit="hidden">
-      {/* Render the background based on screen size */}
-      <DesktopBackground />
-      <MobileBackground />
-
       <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
         <figure className="flex flex-col items-center gap-6">
           <motion.img
@@ -171,7 +102,7 @@ const ProjectPage = ({ project }: Props) => {
               </motion.li>
             ))}
           </motion.ul>
-          <article className="w-96 md:w-full prose dark:prose-invert md:prose-xl">
+          <article className="w-96 md:w-full">
             {documentToReactComponents(project.description.json)}
           </article>
         </div>
