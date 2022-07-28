@@ -21,6 +21,9 @@ function Header(props: Props) {
               <NavLink href="/projects">Projects</NavLink>
             </li>
             <li>
+              <NavLink href="/blog">Blog</NavLink>
+            </li>
+            <li>
               <NavLink href="/#contact">Contact</NavLink>
             </li>
           </ul>

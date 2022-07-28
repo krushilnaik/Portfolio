@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { useBackground } from "../../hooks/useBackground";
 import { useEffect } from "react";
+import { ArrowBack, Home } from "emotion-icons/boxicons-regular";
 
 interface Tech {
   label: string;
@@ -124,13 +125,13 @@ const ProjectPage = ({ project }: Props) => {
 
       <div className="font-mono flex gap-2 fixed bottom-4 left-3 z-50" key="bottom-nav">
         <Link href="/projects" passHref>
-          <a className="text-4xl bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14">
-            &larr;
+          <a className="text-4xl bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14 transition-colors">
+            <ArrowBack size={25} />
           </a>
         </Link>
         <Link href="/" passHref>
-          <a className="bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14">
-            home
+          <a className="bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14 transition-colors">
+            <Home size={25} />
           </a>
         </Link>
       </div>
