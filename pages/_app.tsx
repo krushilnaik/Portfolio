@@ -106,7 +106,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         initial="initial"
         animate="animate"
         transition={{ duration: 0.5 }}
-        className="absolute -z-10 md:hidden h-64 w-64 bg-rose-400/10 rounded-2xl -top-52 right-40"
+        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl -top-52 right-40 lg:right-1/2"
       ></motion.div>
       <motion.div
         variants={{ ...decorationVariants, initial: { x: 100 } }}
@@ -114,7 +114,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         initial="initial"
         animate="animate"
         transition={{ duration: 0.5 }}
-        className="absolute -z-10 h-64 w-64 bg-rose-400/10 rounded-2xl top-96 -right-40"
+        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl top-96 -right-40"
       ></motion.div>
       <motion.div
         variants={{ ...decorationVariants, initial: { x: -100 } }}
@@ -122,7 +122,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         initial="initial"
         animate="animate"
         transition={{ duration: 0.5 }}
-        className="absolute -z-10 h-64 w-64 bg-rose-400/10 rounded-2xl bottom-96 -left-40"
+        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl bottom-96 -left-40"
       ></motion.div>
 
       <motion.div
