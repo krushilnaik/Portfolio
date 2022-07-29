@@ -2,6 +2,7 @@ import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Heading from "../components/Heading";
+import InputField from "../components/InputField";
 import { fetchGraphQL } from "../lib/api";
 
 interface Props {
@@ -66,21 +67,9 @@ const Home: NextPage<Props> = ({ skills }) => {
       <section id="contact">
         <Heading>Contact</Heading>
         <form action="" className="flex flex-col gap-4 max-w-xl m-auto">
-          <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Email:"
-            className="p-2 bg-transparent border-[1px] rounded-md"
-          />
-          <textarea
-            name="message"
-            id="message"
-            cols={30}
-            rows={10}
-            placeholder="Message:"
-            className="p-2 bg-transparent resize-none border-[1px] rounded-md"
-          ></textarea>
+          <InputField element="input" type="email" placeholder="Email:" />
+          <InputField element="textarea" type="text" placeholder="Message:" />
+
           <button
             type="submit"
             className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
