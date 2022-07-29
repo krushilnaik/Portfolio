@@ -12,6 +12,8 @@ interface Props {
 const Home: NextPage<Props> = ({ skills }) => {
   return (
     <main className="text-center p-16">
+      <div className="absolute h-64 w-64 bg-white/10 rounded-2xl top-96 -right-40 rotate-12"></div>
+      <div className="absolute h-64 w-64 bg-white/10 rounded-2xl bottom-96 -left-40 rotate-45"></div>
       <section
         id="about"
         className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
