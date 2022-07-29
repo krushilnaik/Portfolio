@@ -26,7 +26,7 @@ const Home: NextPage<Props> = ({ skills }) => {
           className="rounded-md"
         />
         <div className="flex flex-col gap-9">
-          <p className="max-w-lg text-2xl text-left indent-4">
+          <p className="max-w-lg text-2xl indent-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
             fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
           </p>

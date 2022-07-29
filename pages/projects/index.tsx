@@ -7,6 +7,7 @@ interface Project {
   title: string;
   slug: string;
   accentColor: string;
+  workInProgress: boolean;
 }
 interface Props {
   projects: Project[];
@@ -34,11 +35,12 @@ function Projects({ projects }: Props) {
 export const getStaticProps: GetStaticProps = async () => {
   const { data } = await fetchGraphQL(`
     query {
-      projectCollection(preview: false) {
+      projectCollection(preview: false, order: title_ASC) {
         items {
           title
           slug
           accentColor
+          workInProgress
         }
       }
     }
