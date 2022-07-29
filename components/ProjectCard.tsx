@@ -30,7 +30,7 @@ function ProjectCard(props: Props) {
         alt={`${title} screenshot`}
         className="bg-rose-600 rounded-md object-fill"
       />
-      <figcaption className="text-xl">{title}</figcaption>
+      <figcaption className="text-xl text-slate-200">{title}</figcaption>
     </figure>
   );
 }
