@@ -51,7 +51,7 @@ const Home: NextPage<Props> = ({ skills }) => {
           Mexican cuisine, and I value an organized and quiet working environment.
           <br />
           <hr />
-          <h2>The full version:</h2>
+          <h2>The looong version:</h2>
           I'm a hardworking and organized person, and I'm always willing to learn new
           skills. I work well both in a team environment as well as on my own, setting
           myself reasonable goals that improve my performance. I like to plan ahead so I
