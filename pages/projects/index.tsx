@@ -8,6 +8,11 @@ interface Project {
   slug: string;
   accentColor: string;
   workInProgress: boolean;
+  desktopDemoImage: {
+    filename: string;
+    url: string;
+    contentType;
+  };
 }
 interface Props {
   projects: Project[];

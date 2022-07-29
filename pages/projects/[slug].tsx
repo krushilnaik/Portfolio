@@ -21,6 +21,11 @@ interface Project {
   accentColor: string;
   gitHubRepo: string;
   deployedLink: string | null;
+  desktopDemoImage: {
+    filename: string;
+    url: string;
+    contentType;
+  };
   techStackCollection: {
     items: Tech[];
   };
@@ -94,19 +99,23 @@ const ProjectPage = ({ project }: Props) => {
       <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
         <div className="flex flex-col gap-6">
           <figure className="flex flex-col mt-10 items-center gap-6">
-            <div className="relative flex flex-col gap-6 items-center">
+            <motion.div
+              variants={previewVariants}
+              key="project_demo"
+              className="relative flex flex-col gap-6 items-center"
+            >
               {/* "Computer" frame and base */}
               <div className="p-2 bg-slate-200 rounded-lg before:w-3 before:h-7 before:absolute before:bg-slate-200 before:bottom-2 before:left-1/2 before:-translate-x-1/2">
-                <motion.img
-                  src=""
-                  variants={previewVariants}
+                <img
+                  src={
+                    project.desktopDemoImage?.filename || "/images/image_not_found.jpg"
+                  }
                   alt={`${project.title} screenshot`}
-                  key="project_demo"
                   className="bg-rose-600 rounded-lg w-[350px] h-[200px] drop-shadow-2xl"
                 />
               </div>
               <div className="bg-slate-200 w-28 h-3 rounded-lg"></div>
-            </div>
+            </motion.div>
             <figcaption className="text-center text-3xl md:text-4xl font-medium">
               {project.title}
             </figcaption>
