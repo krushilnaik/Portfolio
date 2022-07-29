@@ -1,16 +1,40 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { motion, Variants } from "framer-motion";
-import { useRouter } from "next/router";
+import { Router, useRouter } from "next/router";
 import { BackgroundContext } from "../contexts/BackgroundContext";
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import MainLayout from "../layouts/MainLayout";
+import Loader from "../components/Loader";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [isProject, setIsProject] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { asPath } = useRouter();
+
+  useEffect(() => {
+    const start = () => {
+      console.log("start");
+      setLoading(true);
+    };
+
+    const end = () => {
+      console.log("finished");
+      setLoading(false);
+    };
+
+    Router.events.on("routeChangeStart", start);
+    Router.events.on("routeChangeComplete", end);
+    Router.events.on("routeChangeError", end);
+
+    return () => {
+      Router.events.off("routeChangeStart", start);
+      Router.events.off("routeChangeComplete", end);
+      Router.events.off("routeChangeError", end);
+    };
+  }, []);
 
   useEffect(() => {
     setIsProject(asPath.startsWith("/projects/"));
@@ -40,6 +64,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   return (
     <MainLayout>
       <Header />
+
+      {loading && <Loader />}
 
       <BackgroundContext.Consumer>
         {({ backgroundColor }) => (
