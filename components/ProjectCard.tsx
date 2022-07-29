@@ -1,12 +1,18 @@
 import { Construction } from "emotion-icons/material";
 import React from "react";
+
 interface Props {
   title: string;
   workInProgress: boolean;
+  desktopDemoImage: {
+    filename: string;
+    url: string;
+    contentType: string;
+  };
 }
 
 function ProjectCard(props: Props) {
-  const { title, workInProgress } = props;
+  const { title, workInProgress, desktopDemoImage } = props;
 
   return (
     <figure className="relative rounded-md z-20 flex flex-col items-center p-2 gap-2">
@@ -18,11 +24,11 @@ function ProjectCard(props: Props) {
         />
       )}
       <img
-        src=""
+        src={desktopDemoImage?.filename || "/images/image_not_found.jpg"}
         width={350}
         height={200}
         alt={`${title} screenshot`}
-        className="bg-rose-600 rounded-md"
+        className="bg-rose-600 rounded-md object-fill"
       />
       <figcaption className="text-xl">{title}</figcaption>
     </figure>

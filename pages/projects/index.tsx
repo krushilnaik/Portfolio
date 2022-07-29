@@ -41,10 +41,17 @@ export const getStaticProps: GetStaticProps = async () => {
           slug
           accentColor
           workInProgress
+          desktopDemoImage {
+            fileName
+            url
+            contentType
+          }
         }
       }
     }
   `);
+
+  console.log(data?.projectCollection?.items);
 
   return {
     props: {
