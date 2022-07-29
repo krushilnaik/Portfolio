@@ -7,6 +7,8 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import { useBackground } from "../../hooks/useBackground";
 import { useEffect } from "react";
 import { ArrowBack, Home } from "emotion-icons/boxicons-regular";
+import { FolderSymlinkFill } from "emotion-icons/bootstrap";
+import { Web } from "emotion-icons/material";
 
 interface Tech {
   label: string;
@@ -16,6 +18,8 @@ interface Tech {
 interface Project {
   title: string;
   accentColor: string;
+  gitHubRepo: string;
+  deployedLink: string | null;
   techStackCollection: {
     items: Tech[];
   };
@@ -88,18 +92,32 @@ const ProjectPage = ({ project }: Props) => {
   ) : (
     <motion.div initial="hidden" animate="visible" exit="hidden">
       <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
-        <figure className="flex flex-col mt-10 items-center gap-6">
-          <motion.img
-            src=""
-            variants={previewVariants}
-            alt={`${project.title} screenshot`}
-            key="project_demo"
-            className="bg-rose-600 rounded-lg w-48 h-96 lg:w-[550px] lg:h-[300px] drop-shadow-2xl"
-          />
-          <figcaption className="text-center text-3xl md:text-4xl">
-            {project.title}
-          </figcaption>
-        </figure>
+        <div className="flex flex-col gap-6">
+          <figure className="flex flex-col mt-10 items-center gap-6">
+            <motion.img
+              src=""
+              variants={previewVariants}
+              alt={`${project.title} screenshot`}
+              key="project_demo"
+              className="bg-rose-600 rounded-lg w-48 h-96 lg:w-[550px] lg:h-[300px] drop-shadow-2xl"
+            />
+            <figcaption className="text-center text-3xl md:text-4xl">
+              {project.title}
+            </figcaption>
+          </figure>
+          <div className="flex gap-6 justify-center rounded-full border-2 border-white/10 p-1">
+            <Link href={project.gitHubRepo} passHref>
+              <a>
+                <FolderSymlinkFill size={40} />
+              </a>
+            </Link>
+            <Link href={project.deployedLink || ""} passHref>
+              <a>
+                <Web size={40} />
+              </a>
+            </Link>
+          </div>
+        </div>
 
         <div className="grid gap-9 md:gap-0 md:w-1/3">
           <motion.ul
@@ -151,6 +169,8 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
         items {
           title
           accentColor
+          gitHubRepo
+          deployedLink
           techStackCollection {
             items {
               label
