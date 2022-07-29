@@ -18,7 +18,7 @@ const Home: NextPage<Props> = ({ skills }) => {
         className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
       >
         <Image
-          src="/images/transparent_me.png"
+          src="/images/transparent_me_with_blob.png"
           width={300}
           height={300}
           objectFit="cover"
