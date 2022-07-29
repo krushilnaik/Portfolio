@@ -65,25 +65,6 @@ const Home: NextPage<Props> = ({ skills }) => {
           <br />I value an organized environment where I can work objectively and where
           hard work gets valued.
         </div>
-        {/* <div>
-          <h2>About me:</h2>
-          <ul className="text-left">
-          <li>Hardworking</li>
-          <li>Organized</li>
-            <li>Avid learner</li>
-            <li>Can work in groups or go it Han Solo</li>
-            <li>Constantly improving</li>
-            <li>Always needs a plan</li>
-            </ul>
-            </div>
-            <div>
-            <h2>What I love:</h2>
-            <ul className="list-disc text-left">
-            <li>Animal GIFs</li>
-            <li>Taco Bell</li>
-            <li>Spicy foods (within reason)</li>
-            </ul>
-          </div> */}
       </div>
       <section id="skills">
         <Heading>Skills</Heading>
