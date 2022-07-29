@@ -9,10 +9,10 @@ function Header(props: Props) {
   const {} = props;
 
   return (
-    <header className="p-3">
-      <nav className="flex justify-between items-center">
-        <Logo />
-        <div className="flex gap-2">
+    <header className="flex items-center justify-between p-3">
+      <Logo />
+      <div className="flex gap-2">
+        <nav className="flex justify-between items-center relative z-50">
           <ul className="flex gap-2 items-center">
             <li>
               <NavLink href="/">Home</NavLink>
@@ -27,9 +27,9 @@ function Header(props: Props) {
               <NavLink href="/#contact">Contact</NavLink>
             </li>
           </ul>
-          <ThemeToggle />
-        </div>
-      </nav>
+        </nav>
+        <ThemeToggle />
+      </div>
     </header>
   );
 }

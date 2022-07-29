@@ -13,19 +13,19 @@ const Home: NextPage<Props> = ({ skills }) => {
     <main className="text-center p-16">
       <section
         id="about"
-        className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center items-center gap-7"
+        className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
       >
         <Image
-          src="/images/me.jpg"
-          width={220}
-          height={220}
+          src="/images/transparent_me.png"
+          width={300}
+          height={300}
           objectFit="cover"
           alt="selfie"
           objectPosition="50% 0%"
           className="rounded-md"
         />
         <div className="flex flex-col gap-9">
-          <p className="max-w-lg">
+          <p className="max-w-lg text-2xl text-left indent-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
             fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
           </p>
@@ -54,8 +54,11 @@ const Home: NextPage<Props> = ({ skills }) => {
               {skill}
             </li>
           ))}
-          <li>
-            <span>...and more!</span>
+          <li
+            key="skill-more"
+            className="bg-slate-500/75 py-1 px-2 md:text-xl rounded-sm hover:bg-slate-500/95 transition-colors"
+          >
+            ...and more!
           </li>
         </ul>
       </section>

@@ -13,7 +13,10 @@ function MainLayout(props: PropsWithChildren<Props>) {
     <ThemeProvider attribute="class">
       <BackgroundContext.Provider value={{ backgroundColor, setBackgroundColor }}>
         <AnimatePresence exitBeforeEnter>
-          <div className="w-screen min-h-screen flex flex-col justify-between max-w-full">
+          <div
+            className="w-screen flex flex-col justify-between max-w-full"
+            style={{ minHeight: "100vh" }}
+          >
             {children}
           </div>
         </AnimatePresence>
