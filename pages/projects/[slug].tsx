@@ -46,8 +46,6 @@ const ProjectPage = ({ project }: Props) => {
     };
   });
 
-  console.log(project.description.json);
-
   const previewVariants: Variants = {
     visible: {
       y: 0,
