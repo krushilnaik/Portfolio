@@ -26,21 +26,23 @@ const Home: NextPage<Props> = ({ skills }) => {
           className="rounded-md"
         />
         <div className="flex flex-col gap-9">
-          <p className="max-w-lg text-2xl indent-4">
-            I'm a hardworking and organized person, and I'm always willing to learn new
-            skills.
-            <br />
-            <br />
-            I work well both in a team environment as well as on my own, setting myself
-            reasonable goals that improve my performance. I like to plan ahead so I can
-            manage my time efficiently and make the most of every moment.
-            <br />
-            <br />
-            I'm an animal lover and I admire those who take good care of them. I enjoy
-            quiet environments thus they help me focus on my tasks. I like spicy foods and
-            I'm a big fan of Mexican cuisine. I value an organized environment where I can
-            work objectively and where hard work gets valued.
-          </p>
+          <div className="prose dark:prose-invert">
+            <h2>About me:</h2>
+            <ul className="text-left">
+              <li>Hardworking</li>
+              <li>Organized</li>
+              <li>Avid learner</li>
+              <li>Can work in groups or go it Han Solo</li>
+              <li>Constantly improving</li>
+              <li>Always needs a plan</li>
+            </ul>
+            <h2>What I love:</h2>
+            <ul className="list-disc text-left">
+              <li>Animal GIFs</li>
+              <li>Taco Bell</li>
+              <li>Spicy foods (within reason)</li>
+            </ul>
+          </div>
           <div className="flex gap-4 items-center w-fit m-auto">
             <Link href="#contact">
               <a className="bg-rose-600 hover:bg-rose-500 m-auto p-2 rounded-md text-lg">
