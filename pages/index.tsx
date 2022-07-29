@@ -27,7 +27,9 @@ const Home: NextPage<Props> = ({ skills }) => {
           className="rounded-md"
         />
         <div className="flex flex-col gap-9">
-          <h1 className="text-5xl font-bold">Fullstack Developer</h1>
+          <h1 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-rose-300 to-red-600">
+            Fullstack Developer
+          </h1>
           <div className="flex gap-4 items-center w-fit m-auto">
             <Link href="#contact">
               <a className="bg-rose-600 hover:bg-rose-500 m-auto p-2 rounded-md text-lg">
