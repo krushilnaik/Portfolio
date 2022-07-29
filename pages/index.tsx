@@ -27,8 +27,19 @@ const Home: NextPage<Props> = ({ skills }) => {
         />
         <div className="flex flex-col gap-9">
           <p className="max-w-lg text-2xl indent-4">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae delectus aliquid
-            fuga necessitatibus libero. Architecto nesciunt aliquid eius qui nobis.
+            I'm a hardworking and organized person, and I'm always willing to learn new
+            skills.
+            <br />
+            <br />
+            I work well both in a team environment as well as on my own, setting myself
+            reasonable goals that improve my performance. I like to plan ahead so I can
+            manage my time efficiently and make the most of every moment.
+            <br />
+            <br />
+            I'm an animal lover and I admire those who take good care of them. I enjoy
+            quiet environments thus they help me focus on my tasks. I like spicy foods and
+            I'm a big fan of Mexican cuisine. I value an organized environment where I can
+            work objectively and where hard work gets valued.
           </p>
           <div className="flex gap-4 items-center w-fit m-auto">
             <Link href="#contact">
