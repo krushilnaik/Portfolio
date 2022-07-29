@@ -26,23 +26,7 @@ const Home: NextPage<Props> = ({ skills }) => {
           className="rounded-md"
         />
         <div className="flex flex-col gap-9">
-          <div className="prose dark:prose-invert">
-            <h2>About me:</h2>
-            <ul className="text-left">
-              <li>Hardworking</li>
-              <li>Organized</li>
-              <li>Avid learner</li>
-              <li>Can work in groups or go it Han Solo</li>
-              <li>Constantly improving</li>
-              <li>Always needs a plan</li>
-            </ul>
-            <h2>What I love:</h2>
-            <ul className="list-disc text-left">
-              <li>Animal GIFs</li>
-              <li>Taco Bell</li>
-              <li>Spicy foods (within reason)</li>
-            </ul>
-          </div>
+          <h1 className="text-5xl font-bold">Fullstack Developer</h1>
           <div className="flex gap-4 items-center w-fit m-auto">
             <Link href="#contact">
               <a className="bg-rose-600 hover:bg-rose-500 m-auto p-2 rounded-md text-lg">
@@ -57,6 +41,27 @@ const Home: NextPage<Props> = ({ skills }) => {
           </div>
         </div>
       </section>
+      <div className="prose dark:prose-invert grid md:grid-cols-2 m-auto md:gap-12">
+        <div>
+          <h2>About me:</h2>
+          <ul className="text-left">
+            <li>Hardworking</li>
+            <li>Organized</li>
+            <li>Avid learner</li>
+            <li>Can work in groups or go it Han Solo</li>
+            <li>Constantly improving</li>
+            <li>Always needs a plan</li>
+          </ul>
+        </div>
+        <div>
+          <h2>What I love:</h2>
+          <ul className="list-disc text-left">
+            <li>Animal GIFs</li>
+            <li>Taco Bell</li>
+            <li>Spicy foods (within reason)</li>
+          </ul>
+        </div>
+      </div>
       <section id="skills">
         <Heading>Skills</Heading>
         <ul className="flex gap-3 flex-wrap justify-center">
