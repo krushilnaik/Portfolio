@@ -10,6 +10,7 @@ import { ArrowBack, Home } from "emotion-icons/boxicons-regular";
 import { FolderSymlinkFill } from "emotion-icons/bootstrap";
 import { Web } from "emotion-icons/material";
 import { renderOptions } from "../../util/contentful";
+import FooterButton from "../../components/FooterButton";
 
 interface Tech {
   label: string;
@@ -120,7 +121,7 @@ const ProjectPage = ({ project }: Props) => {
               {project.title}
             </figcaption>
           </figure>
-          <div className="flex gap-9 justify-center rounded-full border-2 border-white/10 p-1">
+          <div className="flex gap-9 justify-center rounded-full border-2 border-slate-600/20 dark:border-white/10 p-1">
             <Link href={project.gitHubRepo} passHref>
               <a className="hover:text-rose-400 transition-colors cursor-pointer">
                 <FolderSymlinkFill size={40} />
@@ -160,16 +161,12 @@ const ProjectPage = ({ project }: Props) => {
       </div>
 
       <div className="font-mono flex gap-2 fixed bottom-4 left-3 z-50" key="bottom-nav">
-        <Link href="/projects" passHref>
-          <a className="text-4xl bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14 transition-colors">
-            <ArrowBack size={25} />
-          </a>
-        </Link>
-        <Link href="/" passHref>
-          <a className="bg-gray-50/5 hover:bg-gray-50/20 grid place-content-center rounded-full w-14 h-14 transition-colors">
-            <Home size={25} />
-          </a>
-        </Link>
+        <FooterButton href="/projects">
+          <ArrowBack size={25} />
+        </FooterButton>
+        <FooterButton href="/">
+          <Home size={25} />
+        </FooterButton>
       </div>
     </motion.div>
   );

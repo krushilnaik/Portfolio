@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, Linkedin } from "@emotion-icons/boxicons-logos";
 import Link from "next/link";
+import FooterButton from "./FooterButton";
 
 interface Props {}
 
@@ -11,14 +12,12 @@ function Footer(props: Props) {
     <footer className="relative flex flex-col p-4 z-40 items-center gap-3 h-64 bg-black/5 dark:bg-white/5 mt-6">
       <h2 className="text-2xl">Social Links</h2>
       <div className="flex gap-3">
-        <span className="bg-slate-900/10 dark:bg-slate-50/5 rounded-full w-12 h-12 grid place-content-center select-none hover:bg-slate-50/10 hover:text-rose-400 transition-colors cursor-pointer">
+        <FooterButton href="">
           <Linkedin size={25} />
-        </span>
-        <Link href="https://github.com/krushilnaik" passHref>
-          <a className="bg-slate-900/10 dark:bg-slate-50/5 rounded-full w-12 h-12 grid place-content-center select-none hover:bg-slate-50/10 hover:text-rose-400 transition-colors cursor-pointer">
-            <Github size={25} />
-          </a>
-        </Link>
+        </FooterButton>
+        <FooterButton href="https://github.com/krushilnaik">
+          <Github size={25} />
+        </FooterButton>
       </div>
       <p className="text-lg absolute bottom-7">
         Accepts bribes in the form of Taco Bell 🌮
