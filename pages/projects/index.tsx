@@ -56,8 +56,6 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   `);
 
-  console.log(data?.projectCollection?.items);
-
   return {
     props: {
       projects: data?.projectCollection?.items,
