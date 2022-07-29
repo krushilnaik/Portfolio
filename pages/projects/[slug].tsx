@@ -11,6 +11,7 @@ import { FolderSymlinkFill } from "emotion-icons/bootstrap";
 import { Web } from "emotion-icons/material";
 import { renderOptions } from "../../util/contentful";
 import FooterButton from "../../components/FooterButton";
+import Image from "next/image";
 
 interface Tech {
   label: string;
@@ -107,7 +108,7 @@ const ProjectPage = ({ project }: Props) => {
             >
               {/* "Computer" frame and base */}
               <div className="p-2 bg-slate-600 dark:bg-slate-200 rounded-lg before:w-3 before:h-7 before:absolute before:bg-slate-600 before:dark:bg-slate-200 before:bottom-2 before:left-1/2 before:-translate-x-1/2">
-                <img
+                <Image
                   src={
                     project.desktopDemoImage?.filename || "/images/image_not_found.jpg"
                   }

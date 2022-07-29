@@ -1,4 +1,5 @@
 import { Construction } from "emotion-icons/material";
+import Image from "next/image";
 import React from "react";
 
 interface Props {
@@ -23,7 +24,7 @@ function ProjectCard(props: Props) {
           title="Work in Progress"
         />
       )}
-      <img
+      <Image
         src={desktopDemoImage?.filename || "/images/image_not_found.jpg"}
         width={350}
         height={200}
