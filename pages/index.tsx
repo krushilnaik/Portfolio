@@ -11,7 +11,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ skills }) => {
   return (
-    <main className="text-center p-16">
+    <main className="text-center p-16 mt-12 md:mt-0 md:p-0">
       <div className="absolute h-64 w-64 bg-white/10 rounded-2xl top-96 -right-40 rotate-12"></div>
       <div className="absolute h-64 w-64 bg-white/10 rounded-2xl bottom-96 -left-40 rotate-45"></div>
       <section
