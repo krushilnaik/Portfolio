@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import { ArrowBack, Home } from "emotion-icons/boxicons-regular";
 import { FolderSymlinkFill } from "emotion-icons/bootstrap";
 import { Web } from "emotion-icons/material";
+import { renderOptions } from "../../util/contentful";
 
 interface Tech {
   label: string;
@@ -25,6 +26,7 @@ interface Project {
   };
   description: {
     json: any;
+    links: any;
   };
 }
 
@@ -37,14 +39,14 @@ const ProjectPage = ({ project }: Props) => {
   const { setBackgroundColor } = useBackground();
 
   useEffect(() => {
-    console.log(`Setting background color to ${project.accentColor}`);
-
     setBackgroundColor(project.accentColor);
 
     return () => {
       setBackgroundColor("darkslategray");
     };
   });
+
+  console.log(project.description.json);
 
   const previewVariants: Variants = {
     visible: {
@@ -136,7 +138,10 @@ const ProjectPage = ({ project }: Props) => {
             ))}
           </motion.ul>
           <article className="w-96 md:w-full prose dark:prose-invert">
-            {documentToReactComponents(project.description.json)}
+            {documentToReactComponents(
+              project.description.json,
+              renderOptions(project.description.links)
+            )}
           </article>
         </div>
       </div>
@@ -179,6 +184,46 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
           }
           description {
             json
+            links {
+              entries {
+                inline {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on Project {
+                    title
+                    slug
+                  }
+                }
+                block {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on Project {
+                    title
+                    slug
+                  }
+                  ... on BlogPost {
+                    title
+                    slug
+                  }
+                }
+              }
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  url
+                  title
+                  width
+                  height
+                  description
+                }
+              }
+            }
           }
         }
       }
