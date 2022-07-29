@@ -103,7 +103,7 @@ const ProjectPage = ({ project }: Props) => {
               key="project_demo"
               className="bg-rose-600 rounded-lg w-48 h-96 lg:w-[550px] lg:h-[300px] drop-shadow-2xl"
             />
-            <figcaption className="text-center text-3xl md:text-4xl">
+            <figcaption className="text-center text-3xl md:text-4xl font-medium">
               {project.title}
             </figcaption>
           </figure>

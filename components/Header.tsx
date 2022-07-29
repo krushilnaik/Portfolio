@@ -9,11 +9,14 @@ function Header(props: Props) {
   const {} = props;
 
   return (
-    <header className="flex items-center justify-between p-3">
+    <header
+      className="relative z-50 flex items-center justify-between p-3"
+      style={{ fontFamily: "Rubik" }}
+    >
       <Logo />
       <div className="flex gap-2">
-        <nav className="flex justify-between items-center relative z-50">
-          <ul className="flex gap-2 items-center">
+        <nav className="flex justify-between items-center">
+          <ul className="flex gap-2 items-center font-normal">
             <li>
               <NavLink href="/">Home</NavLink>
             </li>
