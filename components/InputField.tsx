@@ -31,7 +31,7 @@ function InputField(props: Props) {
         variants={variants}
         initial={false}
         animate={value ? "filled" : "unfilled"}
-        className="absolute transition-all text-slate-400 left-2"
+        className="absolute transition-all text-slate-400 left-1 top-1 -z-10"
       >
         {placeholder}
       </motion.span>
