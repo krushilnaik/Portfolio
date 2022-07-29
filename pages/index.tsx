@@ -12,8 +12,9 @@ interface Props {
 const Home: NextPage<Props> = ({ skills }) => {
   return (
     <main className="text-center p-16 mt-12 md:mt-0 md:p-0">
-      <div className="absolute h-64 w-64 bg-white/10 rounded-2xl top-96 -right-40 rotate-12"></div>
-      <div className="absolute h-64 w-64 bg-white/10 rounded-2xl bottom-96 -left-40 rotate-45"></div>
+      <div className="absolute md:hidden h-64 w-64 bg-white/5 rounded-2xl -top-52 right-40 rotate-12"></div>
+      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl top-96 -right-40 rotate-12"></div>
+      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl bottom-96 -left-40 rotate-45"></div>
       <section
         id="about"
         className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
@@ -45,6 +46,26 @@ const Home: NextPage<Props> = ({ skills }) => {
       </section>
       <div className="prose dark:prose-invert grid md:grid-cols-2 m-auto md:gap-12">
         <div>
+          <h3>TL;DR</h3>
+          I'm hardworking and organized with my time, I'm an animal lover, a big fan of
+          Mexican cuisine, and I value an organized and quiet working environment.
+          <br />
+          <hr />
+          <h2>The full version:</h2>
+          I'm a hardworking and organized person, and I'm always willing to learn new
+          skills. I work well both in a team environment as well as on my own, setting
+          myself reasonable goals that improve my performance. I like to plan ahead so I
+          can manage my time efficiently and make the most of every moment.
+          <br />
+          <br />
+          I'm an animal lover and I admire those who take good care of them. I enjoy quiet
+          environments thus they help me focus on my tasks. I like spicy foods and I'm a
+          big fan of Mexican cuisine.
+          <br />
+          <br />I value an organized environment where I can work objectively and where
+          hard work gets valued.
+        </div>
+        {/* <div>
           <h2>About me:</h2>
           <ul className="text-left">
             <li>Hardworking</li>
@@ -62,7 +83,7 @@ const Home: NextPage<Props> = ({ skills }) => {
             <li>Taco Bell</li>
             <li>Spicy foods (within reason)</li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <section id="skills">
         <Heading>Skills</Heading>
