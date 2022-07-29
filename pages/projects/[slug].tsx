@@ -111,7 +111,7 @@ const ProjectPage = ({ project }: Props) => {
               {project.title}
             </figcaption>
           </figure>
-          <div className="flex gap-6 justify-center rounded-full border-2 border-white/10 p-1">
+          <div className="flex gap-9 justify-center rounded-full border-2 border-white/10 p-1">
             <Link href={project.gitHubRepo} passHref>
               <a className="hover:text-rose-400 transition-colors cursor-pointer">
                 <FolderSymlinkFill size={40} />
