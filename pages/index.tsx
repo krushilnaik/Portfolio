@@ -44,7 +44,7 @@ const Home: NextPage<Props> = ({ skills }) => {
       </section>
       <div className="prose dark:prose-invert grid md:grid-cols-2 m-auto md:gap-12">
         <div>
-          <h3>TL;DR</h3>
+          <h2>TL;DR</h2>
           I'm hardworking and organized with my time, I'm an animal lover, a big fan of
           Mexican cuisine, and I value an organized and quiet working environment.
           <br />
