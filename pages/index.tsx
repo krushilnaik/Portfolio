@@ -1,3 +1,4 @@
+import { ArrowRightCircle } from "emotion-icons/bootstrap";
 import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -35,7 +36,7 @@ const Home: NextPage<Props> = ({ skills }) => {
             </Link>
             <Link href="/projects" passHref>
               <a className="text-lg hover:text-rose-400 transition-colors">
-                See my projects
+                See my projects <ArrowRightCircle size={"1em"} />
               </a>
             </Link>
           </div>
