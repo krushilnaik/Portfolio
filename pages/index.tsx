@@ -12,9 +12,6 @@ interface Props {
 const Home: NextPage<Props> = ({ skills }) => {
   return (
     <main className="text-center p-16 mt-12 md:mt-0 md:p-0">
-      <div className="absolute md:hidden h-64 w-64 bg-white/5 rounded-2xl -top-52 right-40 rotate-12"></div>
-      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl top-96 -right-40 rotate-12"></div>
-      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl bottom-96 -left-40 rotate-45"></div>
       <section
         id="about"
         className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
@@ -68,22 +65,22 @@ const Home: NextPage<Props> = ({ skills }) => {
         {/* <div>
           <h2>About me:</h2>
           <ul className="text-left">
-            <li>Hardworking</li>
-            <li>Organized</li>
+          <li>Hardworking</li>
+          <li>Organized</li>
             <li>Avid learner</li>
             <li>Can work in groups or go it Han Solo</li>
             <li>Constantly improving</li>
             <li>Always needs a plan</li>
-          </ul>
-        </div>
-        <div>
-          <h2>What I love:</h2>
-          <ul className="list-disc text-left">
+            </ul>
+            </div>
+            <div>
+            <h2>What I love:</h2>
+            <ul className="list-disc text-left">
             <li>Animal GIFs</li>
             <li>Taco Bell</li>
             <li>Spicy foods (within reason)</li>
-          </ul>
-        </div> */}
+            </ul>
+          </div> */}
       </div>
       <section id="skills">
         <Heading>Skills</Heading>
@@ -132,13 +129,13 @@ const Home: NextPage<Props> = ({ skills }) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { data } = await fetchGraphQL(`
-    query {
-      techCollection(limit: 8) {
-        items {
-          label
-        }
+  query {
+    techCollection(limit: 8) {
+      items {
+        label
       }
     }
+  }
   `);
 
   return {
