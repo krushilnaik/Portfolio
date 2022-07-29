@@ -105,7 +105,7 @@ const ProjectPage = ({ project }: Props) => {
               className="relative flex flex-col gap-6 items-center"
             >
               {/* "Computer" frame and base */}
-              <div className="p-2 bg-slate-200 rounded-lg before:w-3 before:h-7 before:absolute before:bg-slate-200 before:bottom-2 before:left-1/2 before:-translate-x-1/2">
+              <div className="p-2 bg-slate-600 dark:bg-slate-200 rounded-lg before:w-3 before:h-7 before:absolute before:bg-slate-600 before:dark:bg-slate-200 before:bottom-2 before:left-1/2 before:-translate-x-1/2">
                 <img
                   src={
                     project.desktopDemoImage?.filename || "/images/image_not_found.jpg"
@@ -114,7 +114,7 @@ const ProjectPage = ({ project }: Props) => {
                   className="bg-rose-600 rounded-lg w-[350px] h-[200px] drop-shadow-2xl"
                 />
               </div>
-              <div className="bg-slate-200 w-28 h-3 rounded-lg"></div>
+              <div className="bg-slate-600 dark:bg-slate-200 w-28 h-3 rounded-lg"></div>
             </motion.div>
             <figcaption className="text-center text-3xl md:text-4xl font-medium">
               {project.title}
