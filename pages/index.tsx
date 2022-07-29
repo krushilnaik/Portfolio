@@ -67,6 +67,13 @@ const Home: NextPage<Props> = ({ skills }) => {
       <section id="contact">
         <Heading>Contact</Heading>
         <form action="" className="flex flex-col gap-4 max-w-xl m-auto">
+          {/* <input
+            type="email"
+            name="email"
+            id="email"
+            className="input"
+            data-placeholder="Email:"
+          /> */}
           <InputField element="input" type="email" placeholder="Email:" />
           <InputField element="textarea" type="text" placeholder="Message:" />
 

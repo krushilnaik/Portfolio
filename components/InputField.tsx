@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { motion, Variants } from "framer-motion";
-
 interface Props {
   type: React.HTMLInputTypeAttribute;
   placeholder: string;
@@ -9,38 +7,17 @@ interface Props {
 
 function InputField(props: Props) {
   const { type, placeholder, element } = props;
-
   const [value, setValue] = useState("");
 
-  const variants: Variants = {
-    filled: {
-      x: -15,
-      y: -15,
-      scale: 0.6,
-    },
-    unfilled: {
-      x: 0,
-      y: 0,
-      scale: 1,
-    },
-  };
-
   return (
-    <div className="relative">
-      <motion.span
-        variants={variants}
-        initial={false}
-        animate={value ? "filled" : "unfilled"}
-        className="absolute transition-all text-slate-400 left-1 top-1 -z-10"
-      >
-        {placeholder}
-      </motion.span>
+    <div className="input" data-placeholder={placeholder}>
       {element === "input" ? (
         <input
           type={type}
+          name={type}
+          id={type}
           defaultValue={value}
           onChange={(event) => setValue(event.currentTarget.value)}
-          className="bg-transparent border-b-2 border-b-rose-300 w-full p-1 outline-none"
         />
       ) : (
         <textarea
@@ -48,9 +25,7 @@ function InputField(props: Props) {
           id="message"
           cols={30}
           rows={10}
-          defaultValue={value}
-          onChange={(event) => setValue(event.currentTarget.value)}
-          className="bg-transparent border-b-2 border-rose-300 w-full p-1 outline-none resize-none"
+          className="resize-none"
         ></textarea>
       )}
     </div>
