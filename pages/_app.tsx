@@ -67,9 +67,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </BackgroundContext.Consumer>
 
       {/* "Watermark" shapes */}
-      <div className="absolute md:hidden h-64 w-64 bg-white/5 rounded-2xl -top-52 right-40 rotate-12"></div>
-      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl top-96 -right-40 rotate-12"></div>
-      <div className="absolute h-64 w-64 bg-white/5 rounded-2xl bottom-96 -left-40 rotate-45"></div>
+      <div className="absolute -z-10 md:hidden h-64 w-64 bg-white/5 rounded-2xl -top-52 right-40 rotate-12"></div>
+      <div className="absolute -z-10 h-64 w-64 bg-white/5 rounded-2xl top-96 -right-40 rotate-12"></div>
+      <div className="absolute -z-10 h-64 w-64 bg-white/5 rounded-2xl bottom-96 -left-40 rotate-45"></div>
 
       <motion.div
         variants={variants}
