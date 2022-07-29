@@ -61,6 +61,13 @@ function MyApp({ Component, pageProps, router }: AppProps) {
     },
   };
 
+  const decorationVariants: Variants = {
+    animate: {
+      x: 0,
+      y: 0,
+    },
+  };
+
   return (
     <MainLayout>
       <Header />
@@ -93,9 +100,30 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </BackgroundContext.Consumer>
 
       {/* "Watermark" shapes */}
-      <div className="absolute -z-10 md:hidden h-64 w-64 bg-black/5 dark:bg-white/5 rounded-2xl -top-52 right-40 rotate-12"></div>
-      <div className="absolute -z-10 h-64 w-64 bg-black/5 dark:bg-white/5 rounded-2xl top-96 -right-40 rotate-12"></div>
-      <div className="absolute -z-10 h-64 w-64 bg-black/5 dark:bg-white/5 rounded-2xl bottom-96 -left-40 rotate-45"></div>
+      <motion.div
+        variants={{ ...decorationVariants, initial: { y: -100 } }}
+        style={{ rotate: "12deg" }}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.5 }}
+        className="absolute -z-10 md:hidden h-64 w-64 bg-rose-400/10 rounded-2xl -top-52 right-40"
+      ></motion.div>
+      <motion.div
+        variants={{ ...decorationVariants, initial: { x: 100 } }}
+        style={{ rotate: "-12deg" }}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.5 }}
+        className="absolute -z-10 h-64 w-64 bg-rose-400/10 rounded-2xl top-96 -right-40"
+      ></motion.div>
+      <motion.div
+        variants={{ ...decorationVariants, initial: { x: -100 } }}
+        style={{ rotate: "45deg" }}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.5 }}
+        className="absolute -z-10 h-64 w-64 bg-rose-400/10 rounded-2xl bottom-96 -left-40"
+      ></motion.div>
 
       <motion.div
         variants={variants}
