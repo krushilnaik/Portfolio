@@ -10,7 +10,7 @@ function Header(props: Props) {
 
   return (
     <header
-      className="relative z-50 flex items-center justify-between p-3"
+      className="absolute z-50 flex items-center justify-between p-3 w-screen"
       style={{ fontFamily: "Rubik" }}
     >
       <Logo />

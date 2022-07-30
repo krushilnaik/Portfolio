@@ -2,6 +2,7 @@ import Link from "next/link";
 import { GetStaticProps } from "next";
 import ProjectCard from "@/components/ProjectCard";
 import { fetchGraphQL } from "@/lib/api";
+import Head from "next/head";
 
 interface Project {
   title: string;
@@ -20,20 +21,28 @@ interface Props {
 
 function Projects({ projects }: Props) {
   return (
-    <ul className="flex gap-9 flex-wrap max-w-[1550px] m-auto justify-center">
-      {projects.map((project, i) => (
-        <li
-          className="bg-slate-700 hover:bg-slate-600 rounded-md transition-colors cursor-pointer"
-          key={`project-${i}`}
-        >
-          <Link href={`/projects/${project.slug}`} passHref>
-            <a>
-              <ProjectCard {...project} />
-            </a>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <>
+      <Head>
+        <title>Krushil | Projects</title>
+      </Head>
+      <h1 className="text-center mb-8 text-4xl" style={{ fontFamily: "Rubik" }}>
+        Projects
+      </h1>
+      <ul className="flex gap-9 flex-wrap max-w-[1550px] m-auto justify-center">
+        {projects.map((project, i) => (
+          <li
+            className="bg-slate-700 hover:bg-slate-600 rounded-md transition-colors cursor-pointer"
+            key={`project-${i}`}
+          >
+            <Link href={`/projects/${project.slug}`} passHref>
+              <a>
+                <ProjectCard {...project} />
+              </a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 }
 

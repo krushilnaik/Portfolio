@@ -100,39 +100,42 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </BackgroundContext.Consumer>
 
       {/* "Watermark" shapes */}
-      <motion.div
-        aria-hidden
-        variants={{ ...decorationVariants, initial: { y: -100 } }}
-        style={{ rotate: "12deg" }}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.5 }}
-        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl -top-52 right-40 lg:right-1/2"
-      ></motion.div>
-      <motion.div
-        aria-hidden
-        variants={{ ...decorationVariants, initial: { x: 100 } }}
-        style={{ rotate: "-12deg" }}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.5 }}
-        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl top-96 -right-40"
-      ></motion.div>
-      <motion.div
-        aria-hidden
-        variants={{ ...decorationVariants, initial: { x: -100 } }}
-        style={{ rotate: "45deg" }}
-        initial="initial"
-        animate="animate"
-        transition={{ duration: 0.5 }}
-        className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl bottom-96 -left-40"
-      ></motion.div>
+      <div className="h-screen w-screen overflow-hidden absolute -z-50">
+        <motion.div
+          aria-hidden
+          variants={{ ...decorationVariants, initial: { y: -100 } }}
+          style={{ rotate: "12deg" }}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.5 }}
+          className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl -top-52 right-40 lg:right-1/2"
+        ></motion.div>
+        <motion.div
+          aria-hidden
+          variants={{ ...decorationVariants, initial: { x: 100 } }}
+          style={{ rotate: "-12deg" }}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.5 }}
+          className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl top-96 -right-40"
+        ></motion.div>
+        <motion.div
+          aria-hidden
+          variants={{ ...decorationVariants, initial: { x: -100 } }}
+          style={{ rotate: "45deg" }}
+          initial="initial"
+          animate="animate"
+          transition={{ duration: 0.5 }}
+          className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl bottom-96 -left-40"
+        ></motion.div>
+      </div>
 
       <motion.div
         variants={variants}
         initial="initial"
         animate="animate"
         exit="exit"
+        className="w-screen min-h-screen pt-11 grid place-content-center"
         key={router.asPath.split("#")[0]}
       >
         <Component {...pageProps} />
