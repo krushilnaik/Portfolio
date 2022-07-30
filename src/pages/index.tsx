@@ -12,7 +12,7 @@ interface Props {
 
 const Home: NextPage<Props> = ({ skills }) => {
   return (
-    <main className="text-center p-16 mt-12 md:mt-0 md:p-0">
+    <main className="text-center p-16 mt-12 md:mt-0 md:p-0 flex flex-col gap-12">
       <section
         id="about"
         className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7"
