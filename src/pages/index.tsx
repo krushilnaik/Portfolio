@@ -2,9 +2,9 @@ import { ArrowRightCircle } from "emotion-icons/bootstrap";
 import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import Heading from "../components/Heading";
-import InputField from "../components/InputField";
-import { fetchGraphQL } from "../lib/api";
+import Heading from "@/components/Heading";
+import InputField from "@/components/InputField";
+import { fetchGraphQL } from "@/lib/api";
 
 interface Props {
   skills: string[];

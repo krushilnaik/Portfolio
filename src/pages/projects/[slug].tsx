@@ -1,17 +1,17 @@
 import { GetStaticProps } from "next";
 import { motion, Variants } from "framer-motion";
 import Link from "next/link";
-import { fetchGraphQL } from "../../lib/api";
 import { useRouter } from "next/router";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { useBackground } from "../../hooks/useBackground";
 import { useEffect } from "react";
 import { ArrowBack, Home } from "emotion-icons/boxicons-regular";
 import { FolderSymlinkFill } from "emotion-icons/bootstrap";
 import { Web } from "emotion-icons/material";
-import { renderOptions } from "../../util/contentful";
-import FooterButton from "../../components/FooterButton";
 import Image from "next/image";
+import { useBackground } from "@/hooks/useBackground";
+import { fetchGraphQL } from "@/lib/api";
+import { renderOptions } from "@/util/contentful";
+import FooterButton from "@/components/FooterButton";
 
 interface Tech {
   label: string;

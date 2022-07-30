@@ -1,7 +1,7 @@
 import Link from "next/link";
-import ProjectCard from "../../components/ProjectCard";
-import { fetchGraphQL } from "../../lib/api";
 import { GetStaticProps } from "next";
+import ProjectCard from "@/components/ProjectCard";
+import { fetchGraphQL } from "@/lib/api";
 
 interface Project {
   title: string;

@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 import React, { PropsWithChildren, useState } from "react";
-import { BackgroundContext } from "../contexts/BackgroundContext";
+import { BackgroundContext } from "@/contexts/BackgroundContext";
 
 interface Props {}
 

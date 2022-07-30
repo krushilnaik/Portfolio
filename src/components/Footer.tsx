@@ -1,6 +1,5 @@
 import React from "react";
 import { Github, Linkedin } from "@emotion-icons/boxicons-logos";
-import Link from "next/link";
 import FooterButton from "./FooterButton";
 
 interface Props {}

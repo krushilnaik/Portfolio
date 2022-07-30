@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 interface Props {
   type: React.HTMLInputTypeAttribute;
   placeholder: string;

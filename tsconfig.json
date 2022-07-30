@@ -14,7 +14,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "noImplicitAny": false,
-    "incremental": true
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

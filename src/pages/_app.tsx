@@ -1,13 +1,13 @@
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { motion, Variants } from "framer-motion";
 import { Router, useRouter } from "next/router";
-import { BackgroundContext } from "../contexts/BackgroundContext";
+import { BackgroundContext } from "@/contexts/BackgroundContext";
 import { useEffect, useState } from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import MainLayout from "../layouts/MainLayout";
-import Loader from "../components/Loader";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import MainLayout from "@/layouts/MainLayout";
+import Loader from "@/components/Loader";
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   const [isProject, setIsProject] = useState(false);
@@ -101,6 +101,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
 
       {/* "Watermark" shapes */}
       <motion.div
+        aria-hidden
         variants={{ ...decorationVariants, initial: { y: -100 } }}
         style={{ rotate: "12deg" }}
         initial="initial"
@@ -109,6 +110,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl -top-52 right-40 lg:right-1/2"
       ></motion.div>
       <motion.div
+        aria-hidden
         variants={{ ...decorationVariants, initial: { x: 100 } }}
         style={{ rotate: "-12deg" }}
         initial="initial"
@@ -117,6 +119,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         className="absolute -z-10 h-64 w-64 md:h-96 md:w-96 bg-rose-400/10 rounded-2xl top-96 -right-40"
       ></motion.div>
       <motion.div
+        aria-hidden
         variants={{ ...decorationVariants, initial: { x: -100 } }}
         style={{ rotate: "45deg" }}
         initial="initial"
