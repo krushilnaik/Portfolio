@@ -109,9 +109,7 @@ const ProjectPage = ({ project }: Props) => {
               {/* "Computer" frame and base */}
               <div className="p-2 bg-slate-600 dark:bg-slate-200 rounded-lg before:w-3 before:h-7 before:absolute before:bg-slate-600 before:dark:bg-slate-200 before:bottom-2 before:left-1/2 before:-translate-x-1/2">
                 <Image
-                  src={
-                    project.desktopDemoImage?.filename || "/images/image_not_found.jpg"
-                  }
+                  src={project.desktopDemoImage?.url || "/images/image_not_found.jpg"}
                   alt={`${project.title} screenshot`}
                   className="bg-rose-600 rounded-lg w-[350px] h-[200px] drop-shadow-2xl"
                 />
