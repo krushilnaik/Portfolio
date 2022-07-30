@@ -23,7 +23,7 @@ function Projects({ projects }: Props) {
     <ul className="flex gap-9 flex-wrap max-w-[1550px] m-auto justify-center">
       {projects.map((project, i) => (
         <li
-          className="min-w-[360px] bg-slate-700 hover:bg-slate-600 rounded-md transition-colors cursor-pointer"
+          className="bg-slate-700 hover:bg-slate-600 rounded-md transition-colors cursor-pointer"
           key={`project-${i}`}
         >
           <Link href={`/projects/${project.slug}`} passHref>
