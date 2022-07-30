@@ -187,6 +187,11 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
           accentColor
           gitHubRepo
           deployedLink
+          desktopDemoImage {
+            fileName
+            url
+            contentType
+          }
           techStackCollection {
             items {
               label

@@ -25,7 +25,7 @@ function ProjectCard(props: Props) {
         />
       )}
       <Image
-        src={desktopDemoImage?.filename || "/images/image_not_found.jpg"}
+        src={desktopDemoImage?.url || "/images/image_not_found.jpg"}
         width={350}
         height={200}
         alt={`${title} screenshot`}
