@@ -1,4 +1,4 @@
-import { ArrowRightCircle } from "emotion-icons/bootstrap";
+import { ArrowDownCircle, ArrowRightCircle } from "emotion-icons/bootstrap";
 import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,7 @@ const Home: NextPage<Props> = ({ skills }) => {
       <Head>
         <title>Krushil</title>
       </Head>
-      <main className="text-center p-16 mt-12 md:mt-0 md:p-0 flex flex-col gap-12">
+      <main className="text-center p-6 mt-12 md:mt-0 md:p-0 flex flex-col gap-12">
         <section className="max-w-7xl m-auto flex flex-col md:flex-row-reverse md:justify-center md:h-screen items-center gap-7">
           <Image
             src="/images/transparent_me_with_blob.png"
@@ -45,6 +45,11 @@ const Home: NextPage<Props> = ({ skills }) => {
               </Link>
             </div>
           </div>
+
+          <ArrowDownCircle
+            size={48}
+            className="absolute bottom-10 animate-bounce text-white/25"
+          />
         </section>
 
         <section className="prose dark:prose-invert m-auto">
@@ -86,28 +91,19 @@ const Home: NextPage<Props> = ({ skills }) => {
               ...and more!
             </li>
           </ul>
-        </section>
-
-        <section id="contact">
-          <Heading>Contact</Heading>
-          <form action="" className="flex flex-col gap-4 max-w-xl m-auto">
-            {/* <input
-            type="email"
-            name="email"
-            id="email"
-            className="input"
-            data-placeholder="Email:"
-          /> */}
-            <InputField element="input" type="email" placeholder="Email:" />
-            <InputField element="textarea" type="text" placeholder="Message:" />
-
-            <button
-              type="submit"
-              className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
-            >
-              Get in touch
-            </button>
-          </form>
+          <div>
+            <Heading>Contact</Heading>
+            <form action="" id="contact" className="flex flex-col gap-4 max-w-xl m-auto">
+              <InputField element="input" type="email" placeholder="Email:" />
+              <InputField element="textarea" type="text" placeholder="Message:" />
+              <button
+                type="submit"
+                className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
+              >
+                Get in touch
+              </button>
+            </form>
+          </div>
         </section>
       </main>
     </>

@@ -14,6 +14,10 @@ figcaption {
   font-family: "Rubik", sans-serif;
 }
 
+section {
+  min-height: 100vh;
+}
+
 @layer utilities {
   .bg-theme {
     @apply bg-slate-200 dark:bg-slate-900;
