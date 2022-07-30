@@ -20,7 +20,7 @@ function ProjectCard(props: Props) {
       {workInProgress && (
         <Construction
           size={30}
-          className="absolute -top-3 -right-3 bg-amber-600 box-content p-2 rounded-full"
+          className="absolute -top-3 -right-3 bg-amber-600 box-content p-2 rounded-full z-50"
           title="Work in Progress"
         />
       )}
