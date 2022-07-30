@@ -117,13 +117,13 @@ const ProjectPage = ({ project }: Props) => {
                 className="relative flex flex-col gap-6 items-center"
               >
                 {/* "Computer" frame and base */}
-                <div className="bg-slate-600 dark:bg-slate-200 rounded-lg w-80 lg:w-[550px] grid place-content-center aspect-video p-2">
+                <div className="bg-slate-600 dark:bg-slate-200 rounded-lg w-80 lg:w-fit grid place-content-center aspect-video p-2">
                   {/* Computer "screen" */}
                   <Image
                     src={project.desktopDemoImage?.url || "/images/image_not_found.jpg"}
                     layout="intrinsic"
-                    width={550}
-                    height={310}
+                    width={700}
+                    height={385}
                     alt={`${project.title} screenshot`}
                     className="bg-rose-600 rounded-lg drop-shadow-2xl"
                   />

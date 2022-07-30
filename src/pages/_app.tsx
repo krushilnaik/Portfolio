@@ -100,7 +100,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
       </BackgroundContext.Consumer>
 
       {/* "Watermark" shapes */}
-      <div className="h-screen w-screen overflow-hidden absolute -z-50">
+      <div className="h-screen w-screen overflow-hidden fixed -z-50">
         <motion.div
           aria-hidden
           variants={{ ...decorationVariants, initial: { y: -100 } }}
