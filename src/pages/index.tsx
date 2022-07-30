@@ -44,29 +44,29 @@ const Home: NextPage<Props> = ({ skills }) => {
           </div>
         </div>
       </section>
-      <div className="prose dark:prose-invert grid md:grid-cols-2 m-auto md:gap-12">
-        <div>
-          <h2>TL;DR</h2>
-          I&apos;m hardworking and organized with my time, I&apos;m an animal lover, a big
-          fan of Mexican cuisine, and I value an organized and quiet working environment.
-          <br />
-          <hr />
-          <h2>The looong version:</h2>
-          I&apos;m a hardworking and organized person, and I&apos;m always willing to
-          learn new skills. I work well both in a team environment as well as on my own,
-          setting myself reasonable goals that improve my performance. I like to plan
-          ahead so I can manage my time efficiently and make the most of every moment.
-          <br />
-          <br />
-          I&apos;m an animal lover and I admire those who take good care of them. I enjoy
-          quiet environments thus they help me focus on my tasks. I like spicy foods and
-          I&apos;m a big fan of Mexican cuisine.
-          <br />
-          <br />I value an organized environment where I can work objectively and where
-          hard work gets valued.
-        </div>
-      </div>
-      <section id="skills">
+
+      <section className="prose dark:prose-invert m-auto">
+        <h2>TL;DR</h2>
+        I&apos;m hardworking and organized with my time, I&apos;m an animal lover, a big
+        fan of Mexican cuisine, and I value an organized and quiet working environment.
+        <br />
+        <hr />
+        <h2>The looong version:</h2>
+        I&apos;m a hardworking and organized person, and I&apos;m always willing to learn
+        new skills. I work well both in a team environment as well as on my own, setting
+        myself reasonable goals that improve my performance. I like to plan ahead so I can
+        manage my time efficiently and make the most of every moment.
+        <br />
+        <br />
+        I&apos;m an animal lover and I admire those who take good care of them. I enjoy
+        quiet environments thus they help me focus on my tasks. I like spicy foods and
+        I&apos;m a big fan of Mexican cuisine.
+        <br />
+        <br />I value an organized environment where I can work objectively and where hard
+        work gets valued.
+      </section>
+
+      <section id="skills" className="max-w-xl m-auto">
         <Heading>Skills</Heading>
         <ul className="flex gap-3 flex-wrap justify-center">
           {skills.map((skill, i) => (
