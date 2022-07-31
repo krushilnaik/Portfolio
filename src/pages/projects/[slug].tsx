@@ -262,8 +262,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     }
   `);
 
-  console.log(data);
-
   if (!data?.projectCollection?.items?.length) {
     return {
       notFound: true,

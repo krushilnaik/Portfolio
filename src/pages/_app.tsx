@@ -15,15 +15,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const { asPath } = useRouter();
 
   useEffect(() => {
-    const start = () => {
-      console.log("start");
-      setLoading(true);
-    };
-
-    const end = () => {
-      console.log("finished");
-      setLoading(false);
-    };
+    const start = () => setLoading(true);
+    const end = () => setLoading(false);
 
     Router.events.on("routeChangeStart", start);
     Router.events.on("routeChangeComplete", end);
