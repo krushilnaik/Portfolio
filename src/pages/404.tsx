@@ -17,7 +17,7 @@ function PageNotFound() {
         <div className="ml-4">
           <span className="text-red-400">message</span>
           <span> = </span>
-          <span className="text-green-500">"page not found";</span>
+          <span className="text-green-500">&quot;page not found&quot;;</span>
         </div>
         <div>{"}"}</div>
       </div>
