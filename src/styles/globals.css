@@ -50,7 +50,7 @@ section {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: crimson;
+  background: #ff3c63;
   border-radius: 5px;
 }
 

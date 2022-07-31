@@ -15,15 +15,8 @@ function MyApp({ Component, pageProps, router }: AppProps) {
   const { asPath } = useRouter();
 
   useEffect(() => {
-    const start = () => {
-      console.log("start");
-      setLoading(true);
-    };
-
-    const end = () => {
-      console.log("finished");
-      setLoading(false);
-    };
+    const start = () => setLoading(true);
+    const end = () => setLoading(false);
 
     Router.events.on("routeChangeStart", start);
     Router.events.on("routeChangeComplete", end);
@@ -79,7 +72,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
           <>
             {/* Desktop Background */}
             <div
-              className="fixed hidden md:block transition-all duration-300 top-0 left-0 h-screen bg-red-400"
+              className="absolute hidden md:block transition-all duration-300 top-0 left-0 h-screen bg-red-400"
               style={{
                 backgroundColor,
                 clipPath: "polygon(0 0, 80% 0%, 55% 100%, 0% 100%)",
@@ -88,7 +81,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
             ></div>
             {/* Mobile background */}
             <div
-              className="fixed transition-all md:hidden duration-300 w-28 h-28 bg-red-400 rounded-full -top-5 -translate-x-1/2 -translate-y-1/2 left-1/2"
+              className="absolute transition-all md:hidden duration-300 w-28 h-28 bg-red-400 rounded-full -translate-x-1/2 -translate-y-1/2 left-1/2"
               style={{
                 backgroundColor,
                 width: isProject ? "135vw" : "0vw",
@@ -135,7 +128,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="w-screen min-h-screen pt-11 grid place-content-center"
+        className="w-screen min-h-screen pt-24 grid place-content-center"
         key={router.asPath.split("#")[0]}
       >
         <Component {...pageProps} />

@@ -1,4 +1,4 @@
-import { ArrowDownCircle, ArrowRightCircle } from "emotion-icons/bootstrap";
+import { ArrowDownCircle } from "emotion-icons/bootstrap";
 import type { NextPage, GetServerSideProps } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,8 +39,8 @@ const Home: NextPage<Props> = ({ skills }) => {
                 </a>
               </Link>
               <Link href="/projects" passHref>
-                <a className="text-lg hover:text-rose-400 transition-colors">
-                  See my projects <ArrowRightCircle size={"1em"} />
+                <a className="text-lg hover:text-rose-400 transition-colors border-2 border-slate-400 dark:border-slate-600 hover:border-rose-500 rounded-md p-2">
+                  See my projects
                 </a>
               </Link>
             </div>
@@ -91,19 +91,17 @@ const Home: NextPage<Props> = ({ skills }) => {
               ...and more!
             </li>
           </ul>
-          <div>
+          <form action="" id="contact" className="flex flex-col gap-4 max-w-xl m-auto">
             <Heading>Contact</Heading>
-            <form action="" id="contact" className="flex flex-col gap-4 max-w-xl m-auto">
-              <InputField element="input" type="email" placeholder="Email:" />
-              <InputField element="textarea" type="text" placeholder="Message:" />
-              <button
-                type="submit"
-                className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
-              >
-                Get in touch
-              </button>
-            </form>
-          </div>
+            <InputField element="input" type="email" placeholder="Email:" />
+            <InputField element="textarea" type="text" placeholder="Message:" />
+            <button
+              type="submit"
+              className="bg-rose-600 hover:bg-rose-500 w-fit m-auto p-2 rounded-md"
+            >
+              Get in touch
+            </button>
+          </form>
         </section>
       </main>
     </>
