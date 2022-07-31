@@ -8,7 +8,7 @@ function Footer(props: Props) {
   const {} = props;
 
   return (
-    <footer className="relative flex flex-col p-4 z-40 items-center gap-3 h-64 bg-black/5 dark:bg-white/5 mt-6">
+    <footer className="relative flex flex-col p-4 z-40 items-center gap-4 h-64 bg-black/5 dark:bg-white/5 mt-6">
       <h2 className="text-2xl">Social Links</h2>
       <div className="flex gap-3">
         <FooterButton href="">
@@ -18,9 +18,7 @@ function Footer(props: Props) {
           <Github size={25} />
         </FooterButton>
       </div>
-      <p className="text-lg absolute bottom-7">
-        Accepts bribes in the form of Taco Bell 🌮
-      </p>
+      <p className="text-lg">Accepts bribes in the form of Taco Bell 🌮</p>
     </footer>
   );
 }

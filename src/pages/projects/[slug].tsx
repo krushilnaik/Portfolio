@@ -75,7 +75,7 @@ const ProjectPage = ({ project }: Props) => {
   const containerVariants: Variants = {
     visible: {
       transition: {
-        staggerChildren: 0.2,
+        staggerChildren: 0.1,
         staggerDirection: -1,
       },
     },
@@ -109,8 +109,8 @@ const ProjectPage = ({ project }: Props) => {
         className="w-screen min-h-screen grid place-content-center"
       >
         <div className="relative z-20 md:p-9 flex flex-wrap justify-center gap-y-9 gap-x-48">
-          <div className="flex flex-col md:m-0">
-            <figure className="flex flex-col mt-10 items-center gap-6">
+          <div className="flex flex-col md:m-0 gap-4">
+            <figure className="flex flex-col mt-28 md:mt-0 items-center gap-6">
               <motion.div
                 variants={previewVariants}
                 key="project_demo"
@@ -261,6 +261,14 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       }
     }
   `);
+
+  console.log(data);
+
+  if (!data?.projectCollection?.items?.length) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {

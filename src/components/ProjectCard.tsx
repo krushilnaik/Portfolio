@@ -16,7 +16,7 @@ function ProjectCard(props: Props) {
   const { title, workInProgress, desktopDemoImage } = props;
 
   return (
-    <figure className="relative rounded-md z-20 flex flex-col items-center p-2 gap-2">
+    <figure className="relative rounded-md z-20 flex flex-col items-center">
       {workInProgress && (
         <Construction
           size={30}
@@ -29,9 +29,14 @@ function ProjectCard(props: Props) {
         width={350}
         height={200}
         alt={`${title} screenshot`}
-        className="bg-rose-600 rounded-md object-fill"
+        className="bg-rose-600 rounded-md object-fill hover:brightness-50 transition-all duration-300"
       />
-      <figcaption className="text-xl text-slate-200">{title}</figcaption>
+      <figcaption
+        className="absolute rounded-tl-md top-0 left-0 pl-1 pt-2 pr-5 pb-2 text-xl text-slate-200 bg-rose-500"
+        style={{ clipPath: "polygon(0 0, 100% 0, calc(100% - 1rem) 100%, 0 100%)" }}
+      >
+        {title}
+      </figcaption>
     </figure>
   );
 }
