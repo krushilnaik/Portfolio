@@ -128,7 +128,7 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         initial="initial"
         animate="animate"
         exit="exit"
-        className="w-screen min-h-screen pt-11 grid place-content-center"
+        className="w-screen min-h-screen pt-24 grid place-content-center"
         key={router.asPath.split("#")[0]}
       >
         <Component {...pageProps} />

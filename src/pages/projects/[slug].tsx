@@ -100,7 +100,7 @@ const ProjectPage = ({ project }: Props) => {
   ) : (
     <>
       <Head>
-        <title>Krushil | Projects | {project.title}</title>
+        <title>{`Krushil | Projects | ${project.title}`}</title>
       </Head>
       <motion.main
         initial="hidden"
